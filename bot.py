@@ -454,7 +454,8 @@ async def on_message(message: discord.Message):
         clean_content = preprocess_mentions(clean_content, message.guild)
 
     # ── Inject user context ──
-    member_roles = [r.name for r in message.author.roles if r.name != "@everyone"]
+    roles = getattr(message.author, "roles", [])
+    member_roles = [r.name for r in roles if r.name != "@everyone"]
     user_context = (
         f"[Speaking with: {message.author.display_name} "
         f"(id: {message.author.id}), "
