@@ -535,6 +535,7 @@
     }
 
     .context-grid,
+    .resource-grid,
     .repo-grid,
     .routine-grid,
     .repo-flow-grid,
@@ -544,6 +545,10 @@
     }
 
     .context-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .resource-grid {
       grid-template-columns: repeat(3, 1fr);
     }
 
@@ -563,6 +568,7 @@
 
     @media (max-width: 980px) {
       .context-grid,
+      .resource-grid,
       .repo-grid,
       .repo-flow-grid,
       .knowledge-map-grid,
@@ -573,6 +579,7 @@
 
     @media (max-width: 768px) {
       .context-grid,
+      .resource-grid,
       .repo-grid,
       .repo-flow-grid,
       .knowledge-map-grid,
@@ -582,6 +589,7 @@
     }
 
     .context-card,
+    .resource-card,
     .repo-card,
     .routine-card,
     .repo-flow-card,
@@ -596,6 +604,7 @@
     }
 
     .context-card h3,
+    .resource-card h3,
     .repo-card h3,
     .routine-card h3,
     .repo-flow-card h3,
@@ -638,6 +647,7 @@
     }
 
     .context-card p,
+    .resource-card p,
     .repo-card p,
     .routine-card p,
     .repo-flow-card p,
@@ -694,6 +704,16 @@
       color: var(--primary-hover);
     }
 
+    .resource-links {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .resource-links .repo-link {
+      margin-top: 0;
+    }
+
     .signal-list {
       display: grid;
       gap: 18px;
@@ -743,7 +763,7 @@
     }
 
     .wallet-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       margin-top: 28px;
     }
 
@@ -1067,6 +1087,10 @@
         <a href="#repos" class="nav-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
           Repositories
+        </a>
+        <a href="#setup-guides" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v12"/><path d="M6 12h12"/><circle cx="12" cy="12" r="9"/></svg>
+          Setup Guides
         </a>
         <a href="#tutor" class="nav-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5Z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>
@@ -1429,6 +1453,85 @@ push updated folder</div>
         </div>
       </section>
 
+      <section id="setup-guides" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Setup Guides</h2>
+          <p class="section-subtitle">OpenTutor depends on a few real-world setup steps: parent and student GitHub accounts, a Discord server, and a properly installed Discord bot. These links point to the official docs so families can stand the system up on a solid foundation.</p>
+        </div>
+
+        <div class="resource-grid">
+          <div class="resource-card">
+            <div class="repo-meta live">GitHub Basics</div>
+            <h3>Create the parent and student GitHub accounts</h3>
+            <p>Each learner should have a real GitHub identity if they are going to pull assignments, commit their work, and build a portfolio over time. Start with the official account-creation and onboarding guides.</p>
+            <div class="resource-links">
+              <a class="repo-link" href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github" target="_blank" rel="noreferrer">Create a GitHub account</a>
+              <a class="repo-link" href="https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account" target="_blank" rel="noreferrer">Get started with a GitHub account</a>
+            </div>
+          </div>
+
+          <div class="resource-card">
+            <div class="repo-meta">Education Path</div>
+            <h3>Use GitHub Education and Classroom where it helps</h3>
+            <p>If you want a more formal assignment workflow, GitHub Education and GitHub Classroom can structure repositories, roster-like flows, and assignment distribution. Families can also run OpenTutor with plain repositories if they want a lighter setup.</p>
+            <div class="resource-links">
+              <a class="repo-link" href="https://docs.github.com/en/education/about-github-education/github-education-for-teachers/apply-to-github-education-as-a-teacher" target="_blank" rel="noreferrer">GitHub Education for teachers</a>
+              <a class="repo-link" href="https://docs.github.com/en/education/quickstart" target="_blank" rel="noreferrer">GitHub educator quickstart</a>
+            </div>
+          </div>
+
+          <div class="resource-card">
+            <div class="repo-meta">Discord Server</div>
+            <h3>Create the Discord account and homeschool server</h3>
+            <p>The Discord server is the classroom layer. This is where subject channels, announcements, office hours, and check-ins live. Start by creating the parent Discord account, then create the server and organize it into clear subject and admin spaces.</p>
+            <div class="resource-links">
+              <a class="repo-link" href="https://support.discord.com/hc/en-us/articles/31676852332439-Discord-Sign-Up-and-Registration-Guide" target="_blank" rel="noreferrer">Create a Discord account</a>
+              <a class="repo-link" href="https://support.discord.com/hc/en-us/articles/204849977-How-do-I-create-a-server" target="_blank" rel="noreferrer">Create a Discord server</a>
+            </div>
+          </div>
+
+          <div class="resource-card">
+            <div class="repo-meta live">Discord Bot</div>
+            <h3>Create the Discord application and bot user</h3>
+            <p>Vibe runs as a Discord bot application. The official Discord developer docs walk through creating the application, adding a bot user, and preparing it for installation in your server.</p>
+            <div class="resource-links">
+              <a class="repo-link" href="https://discord.com/developers/docs/quick-start/getting-started" target="_blank" rel="noreferrer">Discord developer quick start</a>
+              <a class="repo-link" href="https://discord.com/developers/docs/resources/application" target="_blank" rel="noreferrer">Discord applications and bot docs</a>
+            </div>
+          </div>
+
+          <div class="resource-card">
+            <div class="repo-meta">Install &amp; Permissions</div>
+            <h3>Install the bot correctly in your server</h3>
+            <p>After creating the bot, you still need to install it into the homeschool server with the right scopes and permissions. Keep this tight: only request what the classroom actually needs.</p>
+            <div class="resource-links">
+              <a class="repo-link" href="https://discord.com/developers/docs/topics/oauth2" target="_blank" rel="noreferrer">Discord OAuth2 and installation</a>
+              <a class="repo-link" href="https://discord.com/developers/docs/topics/permissions" target="_blank" rel="noreferrer">Discord permissions reference</a>
+            </div>
+          </div>
+
+          <div class="resource-card">
+            <div class="repo-meta live">OpenTutor Runtime</div>
+            <h3>Run the current Vibe bot repository</h3>
+            <p>Once GitHub and Discord are in place, the final step is configuring the bot token and Anthropic key, then running this repository so Vibe can join the homeschool server as the tutor layer.</p>
+            <div class="resource-links">
+              <a class="repo-link" href="https://github.com/murderszn/vibe" target="_blank" rel="noreferrer">Open the Vibe source repository</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="signal-list">
+          <div class="signal-item">
+            <strong>Recommended implementation sequence</strong>
+            <span>Create the parent GitHub account, create the student accounts, create the homeschool Discord server, create the Discord bot application, install the bot with limited permissions, then connect the repositories and subject channels.</span>
+          </div>
+          <div class="signal-item">
+            <strong>Operational note</strong>
+            <span>For a family-run deployment, plain GitHub repositories may be enough at first. GitHub Classroom becomes more useful if you want a more formal assignment-distribution model on top of the same core workflow.</span>
+          </div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="section-header">
           <h2 class="section-title">Implementation Notes</h2>
@@ -1681,8 +1784,8 @@ push updated folder</div>
         <div class="wallet-grid">
           <div class="wallet-card">
             <span class="wallet-label">Bitcoin</span>
-            <p>Use this space for a production BTC address or a donation processor link.</p>
-            <div class="wallet-address" data-wallet-value>btc_wallet_address_here</div>
+            <p>Direct Bitcoin support for OpenTutor infrastructure, hosting, and ongoing development.</p>
+            <div class="wallet-address" data-wallet-value>3AWfncSFKENu47mDUhyZU1tvAULPzkSdZ8</div>
             <div class="wallet-actions">
               <button class="wallet-copy-btn" type="button" data-copy-wallet>Copy address</button>
             </div>
@@ -1690,24 +1793,15 @@ push updated folder</div>
 
           <div class="wallet-card">
             <span class="wallet-label">Ethereum / EVM</span>
-            <p>Use this space for ETH, Base, or another EVM-compatible donation address.</p>
-            <div class="wallet-address" data-wallet-value>evm_wallet_address_here</div>
-            <div class="wallet-actions">
-              <button class="wallet-copy-btn" type="button" data-copy-wallet>Copy address</button>
-            </div>
-          </div>
-
-          <div class="wallet-card">
-            <span class="wallet-label">Solana</span>
-            <p>Use this space for a SOL donation wallet if you want to support lower-fee contributions.</p>
-            <div class="wallet-address" data-wallet-value>sol_wallet_address_here</div>
+            <p>Direct EVM-compatible support for OpenTutor infrastructure, tooling, and documentation work.</p>
+            <div class="wallet-address" data-wallet-value>0x6B71F8F87F7eA31628149D70B9d178cB3E357A90</div>
             <div class="wallet-actions">
               <button class="wallet-copy-btn" type="button" data-copy-wallet>Copy address</button>
             </div>
           </div>
         </div>
 
-        <p class="donation-note">Before publishing real addresses, replace the placeholders above with production wallets you control, ideally a multisig or hardware-wallet workflow for treasury funds.</p>
+        <p class="donation-note">These addresses fund OpenTutor infrastructure, API usage, curriculum maintenance, and continued development.</p>
       </section>
 
       </div>
