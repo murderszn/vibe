@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OpenTutor — White Paper Published April 17, 2026</title>
+  <title>OpenTutor v1.0</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet" />
@@ -322,7 +322,7 @@
     .hero-strip-label {
       display: inline-flex;
       padding: 5px 10px;
-      border-radius: 999px;
+      border-radius: 4px;
       border: 1px solid var(--border);
       background: #f8fafc;
       color: var(--primary);
@@ -518,6 +518,7 @@
     }
 
     @media (max-width: 980px) {
+      .diagram-pair,
       .context-grid,
       .resource-grid,
       .repo-grid,
@@ -534,6 +535,7 @@
     }
 
     @media (max-width: 768px) {
+      .diagram-pair,
       .context-grid,
       .resource-grid,
       .repo-grid,
@@ -546,6 +548,10 @@
       .setup-clusters,
       .order-rail {
         grid-template-columns: 1fr;
+      }
+
+      .diagram-card-header {
+        flex-direction: column;
       }
     }
 
@@ -715,7 +721,7 @@
       width: 34px;
       height: 34px;
       margin-bottom: 14px;
-      border-radius: 999px;
+      border-radius: 4px;
       border: 1px solid rgba(99,102,241,0.16);
       background: rgba(99,102,241,0.08);
       color: var(--primary);
@@ -780,7 +786,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
+      border-radius: 4px;
       background: rgba(99,102,241,0.1);
       border: 1px solid rgba(99,102,241,0.16);
       color: var(--primary);
@@ -814,7 +820,7 @@
       gap: 8px;
       margin-bottom: 16px;
       padding: 6px 10px;
-      border-radius: 999px;
+      border-radius: 4px;
       background: #f8fafc;
       border: 1px solid var(--border);
       color: var(--muted);
@@ -1023,14 +1029,93 @@
     .system-map-panel img {
       width: 100%;
       display: block;
+      aspect-ratio: 16 / 10;
       border-radius: 18px;
       object-fit: cover;
+      background: #eef2f7;
     }
 
     .system-map-caption {
-      padding: 18px 10px 2px;
+      padding: 18px 6px 0;
       color: var(--muted);
       font-size: 0.95rem;
+      line-height: 1.65;
+      max-width: none;
+      overflow-wrap: anywhere;
+    }
+
+    .diagram-pair {
+      width: 100%;
+      max-width: none;
+      margin: 0 0 40px;
+    }
+
+    .diagram-card {
+      position: relative;
+      border-radius: 24px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.9) 100%);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-pearl);
+      overflow: hidden;
+    }
+
+    .diagram-card-header {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 8px 16px;
+    }
+
+    .diagram-kicker {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 7px;
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .diagram-card-header h3 {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .diagram-card-header p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      max-width: none;
+    }
+
+    .diagram-image {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(203,213,225,0.86);
+      background: #eef2f7;
+      box-shadow: var(--shadow-sm);
+      margin-top: 4px;
+    }
+
+    .diagram-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 22px;
+      padding: 14px 6px 0;
+    }
+
+    .diagram-links .repo-link {
+      margin-top: 0;
     }
 
     .image-panel img {
@@ -1058,13 +1143,14 @@
     .strength-card-copy p {
       color: var(--muted);
       font-size: 0.95rem;
+      line-height: 1.65;
     }
 
     .strength-kicker {
       display: inline-flex;
       margin-bottom: 12px;
       padding: 5px 10px;
-      border-radius: 999px;
+      border-radius: 4px;
       background: #f8fafc;
       border: 1px solid var(--border);
       color: var(--primary);
@@ -1274,6 +1360,7 @@
         <img src="images/opentutor-mark.png" alt="OpenTutor cat mark" class="logo-img" />
         <div class="logo-copy">
           <span class="logo-text">OpenTutor</span>
+          <span class="logo-subtext">v1.0</span>
         </div>
       </div>
 
@@ -1337,10 +1424,10 @@
       
       <!-- HERO -->
       <section id="overview" class="hero-section">
-        <h1 class="hero-title">OpenTutor: an open model for homeschooling through GitHub, Discord, and a Claude-backed tutor.</h1>
-        <p class="hero-subtitle">OpenTutor is the platform name. Vibe remains the tutor. This page is structured as a design white paper for a parent-operated homeschool system where curriculum lives in repositories, daily instruction lives in Discord, and AI support stays visible, supervised, and accountable.</p>
+        <h1 class="hero-title">OpenTutor v1.0: an open model for homeschooling through GitHub, Discord, and a Claude-backed tutor.</h1>
+        <p class="hero-subtitle">OpenTutor v1.0 is the platform. Vibe is the tutor. This page is structured as a design white paper for a parent-operated homeschool system where curriculum lives in repositories, daily instruction lives in Discord, and AI support stays visible, supervised, and accountable.</p>
         <div class="hero-meta">
-          <span>Published April 17, 2026</span>
+          <span>v1.0 — Published April 2026</span>
           <span>By <a href="https://github.com/murderszn" target="_blank" rel="noreferrer">@murderszn</a></span>
         </div>
 
@@ -1391,14 +1478,34 @@
 
         <div class="system-map-panel">
           <img src="images/opentutor-integration-map.png" alt="Technical integration map showing repositories, channels, tutor layer, and parent oversight connected as one system" />
-          <div class="system-map-caption">This integration view emphasizes that OpenTutor is not a single app. It is a technical operating model connecting repositories, channels, student work surfaces, tutoring, and parent review into one coherent system.</div>
+          <div class="system-map-caption">Repositories, classroom channels, student work surfaces, tutoring, and parent review connect as one operating model rather than a stack of separate apps.</div>
         </div>
       </section>
 
       <section class="section">
         <div class="section-header">
           <h2 class="section-title">Design Rationale</h2>
-          <p class="section-subtitle">The intent is not to simulate school software. The intent is to create a documentable, flexible, parent-run learning environment that can improve over time.</p>
+          <p class="section-subtitle">The model is simple on purpose: Discord is the classroom center, GitHub holds the work, Vibe supports instruction, and the parent remains the operator.</p>
+        </div>
+
+        <div class="diagram-pair">
+          <div class="diagram-card">
+            <div class="diagram-card-header">
+              <div>
+                <span class="diagram-kicker">Systems Map</span>
+                <h3>Connected classroom systems</h3>
+                <p>Discord sits at the center of the school day, supported by GitHub structure, tutor assistance, and visible parent oversight.</p>
+              </div>
+            </div>
+
+            <img class="diagram-image" src="images/ChatGPT Image Apr 18, 2026, 02_37_49 PM.png" alt="Systems image showing the OpenTutor homeschool model with Discord, GitHub, tutoring, and parent oversight connected visually." />
+            <p class="system-map-caption">One live classroom surface, one parent operator, one curriculum layer, and one tutor layer work together without hiding how the system is actually implemented.</p>
+            <div class="diagram-links">
+              <a class="repo-link" href="https://github.com/murderszn/vibe" target="_blank" rel="noreferrer">View the bot repository</a>
+              <a class="repo-link" href="https://discord.com/developers/docs/quick-start/getting-started" target="_blank" rel="noreferrer">Discord developer quick start</a>
+              <a class="repo-link" href="#setup-guides">Open setup guides</a>
+            </div>
+          </div>
         </div>
 
         <div class="context-grid">
@@ -1519,8 +1626,7 @@
         </div>
 
         <div class="section-guide">
-          <span class="hero-strip-label">Repository Roles</span>
-          <div class="scan-strip" style="margin-top: 12px;">
+<div class="scan-strip" style="margin-top: 12px;">
             <div class="scan-item">
               <strong>Bot Repo</strong>
               <span>Runs Vibe inside Discord and holds the tutor logic.</span>
@@ -1603,7 +1709,7 @@ push updated folder</div>
 
         <div class="system-map-panel">
           <img src="images/opentutor-repo-map.png" alt="Technical repository workflow map showing student folders, subjects, assignments, and project outputs connected together" />
-          <div class="system-map-caption">This repository workflow view shows the technical implementation layer: student roots, subject folders, assignment packets, project branches, and work recommitted back into organized outputs.</div>
+          <div class="system-map-caption">Student roots, subject folders, assignment packets, project branches, and recommitted work stay organized as a visible technical workflow.</div>
         </div>
       </section>
 
@@ -1751,16 +1857,16 @@ push updated folder</div>
           <div class="image-panel">
             <img src="images/vibe-tutor-classroom.png" alt="Illustration of Vibe tutoring inside a calm digital classroom" />
             <div class="image-panel-copy">
-              <h3>Built for the classroom channel</h3>
-              <p>Vibe is designed to live inside the same subject spaces where students already work. Instead of sending kids to another tool, the tutor meets them in the study flow they are already using.</p>
+              <h3>Tutor support in subject channels</h3>
+              <p>Subject channels, prompts, and tutor help live in the same classroom flow, so support appears where students are already working.</p>
             </div>
           </div>
 
           <div class="image-panel">
             <img src="images/vibe-tutor-strengths.png" alt="Illustration showing Vibe's tutoring strengths and classroom support" />
             <div class="image-panel-copy">
-              <h3>Grounded in practical strengths</h3>
-              <p>The bot keeps recent context, knows who is speaking, stays concise, and operates with guardrails. That combination makes it more useful for homeschooling than a generic chat window.</p>
+              <h3>Context-aware tutor support</h3>
+              <p>Recent context, speaker awareness, concise replies, and guardrails turn tutoring into a practical classroom layer instead of a generic chat window.</p>
             </div>
           </div>
         </div>
@@ -1930,24 +2036,24 @@ push updated folder</div>
           <div class="image-panel">
             <img src="images/opentutor-morning.png" alt="Pearlescent cat illustration of the morning homeschool check-in" />
             <div class="image-panel-copy">
-              <h3>Morning structure</h3>
-              <p>The day begins with orientation, clarity, and visible expectations rather than scattered tasks across multiple apps.</p>
+              <h3>Morning check-in</h3>
+              <p>Orientation, clarity, and visible expectations establish the day before work begins.</p>
             </div>
           </div>
 
           <div class="image-panel">
             <img src="images/opentutor-study.png" alt="Pearlescent cat illustration of focused homeschool study and guided work" />
             <div class="image-panel-copy">
-              <h3>Focused study window</h3>
-              <p>Students move between subject channels, repository materials, and lightweight tutor support without losing their place.</p>
+              <h3>Focused study</h3>
+              <p>Subject channels, repository materials, and lightweight tutor support stay connected during focused work.</p>
             </div>
           </div>
 
           <div class="image-panel">
             <img src="images/opentutor-review.png" alt="Pearlescent cat illustration of homeschool review and end-of-day reflection" />
             <div class="image-panel-copy">
-              <h3>Review and closure</h3>
-              <p>Reflection is part of the operating model so progress becomes visible, discussable, and easier to improve tomorrow.</p>
+              <h3>Review and recommit</h3>
+              <p>Reflection and review make progress visible, discussable, and easier to improve the next day.</p>
             </div>
           </div>
         </div>
