@@ -482,7 +482,6 @@
     .routine-grid,
     .repo-flow-grid,
     .knowledge-map-grid,
-    .repo-lanes,
     .repo-steps,
     .knowledge-columns,
     .setup-clusters,
@@ -513,7 +512,6 @@
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .repo-lanes,
     .knowledge-columns,
     .setup-clusters {
       grid-template-columns: repeat(3, 1fr);
@@ -535,7 +533,6 @@
       .repo-flow-grid,
       .knowledge-map-grid,
       .routine-grid,
-      .repo-lanes,
       .repo-steps,
       .knowledge-columns,
       .setup-clusters,
@@ -552,7 +549,6 @@
       .repo-flow-grid,
       .knowledge-map-grid,
       .routine-grid,
-      .repo-lanes,
       .repo-steps,
       .knowledge-columns,
       .setup-clusters,
@@ -642,13 +638,11 @@
       overflow-x: auto;
     }
 
-    .repo-lanes,
     .knowledge-columns,
     .setup-clusters {
       margin-top: 28px;
     }
 
-    .repo-lane,
     .knowledge-cluster,
     .setup-cluster,
     .repo-step {
@@ -659,12 +653,10 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .repo-lane,
     .setup-cluster {
       padding: 24px;
     }
 
-    .repo-lane-kicker,
     .knowledge-cluster-kicker,
     .setup-cluster-kicker,
     .repo-step-kicker {
@@ -679,7 +671,6 @@
       text-transform: uppercase;
     }
 
-    .repo-lane h3,
     .knowledge-cluster h3,
     .setup-cluster h3,
     .repo-step h3 {
@@ -689,7 +680,6 @@
       margin-bottom: 10px;
     }
 
-    .repo-lane p,
     .knowledge-cluster p,
     .setup-cluster p,
     .repo-step p {
@@ -698,7 +688,6 @@
       line-height: 1.55;
     }
 
-    .repo-lane .repo-link,
     .setup-cluster .repo-link {
       margin-top: 14px;
     }
@@ -895,12 +884,6 @@
       line-height: 1.45;
     }
 
-    .setup-cluster-links {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
     .repo-meta {
       display: inline-flex;
       align-items: center;
@@ -983,29 +966,23 @@
       margin-bottom: 34px;
     }
 
-    .micro-list {
-      display: grid;
-      gap: 10px;
+    .setup-bullets {
       margin-top: 16px;
+      padding-left: 18px;
+      color: var(--muted);
     }
 
-    .micro-list span {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--muted);
+    .setup-bullets li {
       font-size: 0.9rem;
       line-height: 1.45;
     }
 
-    .micro-list span::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--primary);
-      flex-shrink: 0;
-      box-shadow: 0 0 0 4px rgba(99,102,241,0.08);
+    .setup-bullets li + li {
+      margin-top: 10px;
+    }
+
+    .setup-bullets .repo-link {
+      margin-top: 0;
     }
 
     .resource-links {
@@ -1552,7 +1529,6 @@
       .routine-card,
       .repo-flow-card,
       .knowledge-card,
-      .repo-lane,
       .knowledge-cluster,
       .setup-cluster,
       .repo-step,
@@ -1619,7 +1595,6 @@
 
       .image-panel-copy h3,
       .strength-card-copy h3,
-      .repo-lane h3,
       .setup-cluster h3,
       .repo-step h3,
       .timeline-what h3,
@@ -1665,7 +1640,6 @@
       .workflow-card,
       .feature-item,
       .context-card,
-      .repo-lane,
       .setup-cluster,
       .repo-step,
       .knowledge-note,
@@ -1908,70 +1882,52 @@
       <section id="repos" class="section">
         <div class="section-header">
           <h2 class="section-title">Repository Map</h2>
-          <p class="section-subtitle">The bot repo is live now. The broader school model expands into a small set of repositories that are easy to inspect, update, and reuse.</p>
-        </div>
-
-        <div class="repo-lanes">
-          <div class="repo-lane">
-            <div class="repo-lane-kicker">Live Repo</div>
-            <h3>Vibe bot repository</h3>
-            <p>The current repo runs the Discord tutor, Claude integration, moderation flow, and parent-visible classroom logic.</p>
-            <a class="repo-link" href="https://github.com/murderszn/vibe" target="_blank" rel="noreferrer">View the bot on GitHub</a>
-          </div>
-
-          <div class="repo-lane">
-            <div class="repo-lane-kicker">Planned Repo</div>
-            <h3>Curriculum repository</h3>
-            <p>Units, readings, assignment prompts, rubrics, and project briefs live here as normal files with visible revision history.</p>
-          </div>
-
-          <div class="repo-lane">
-            <div class="repo-lane-kicker">Planned Repo</div>
-            <h3>Schedule repository</h3>
-            <p>Weekly rhythm, pacing guides, checklists, and semester planning sit in a separate planning layer that feeds the daily school flow.</p>
-          </div>
+          <p class="section-subtitle">The OpenTutor repo already shows what the homeschool side can look like in practice: assignments, resources, student folders, teacher dashboards, and AI prompt files all live in a visible structure that families can edit directly.</p>
         </div>
 
         <div class="repo-steps">
           <div class="repo-step">
-            <div class="repo-step-kicker">Student Structure</div>
-            <h3>One root per student</h3>
-            <p>Each child works inside a clear root folder with subjects, assignment materials, and project space kept together.</p>
-            <div class="repo-flow-code">student-name/
-  language-arts/
-  math/
-  stem/
-  social-studies/
-  projects/</div>
+            <div class="repo-step-kicker">OpenTutor Example</div>
+            <h3>The repo is split by function</h3>
+            <p>The live <code>open-tutor</code> structure separates shared materials, student workspaces, and teacher tools so the system stays readable as it grows.</p>
+            <div class="repo-flow-code">open-tutor/
+  assignments/
+  resources/
+  students/
+  teachers/
+  .github/workflows/</div>
           </div>
 
           <div class="repo-step">
-            <div class="repo-step-kicker">Assignment Loop</div>
-            <h3>Pull, work, commit back</h3>
-            <p>Students learn a repeatable loop that turns schoolwork into organized digital practice instead of disconnected files.</p>
-            <div class="repo-flow-code">pull assignment
-work locally
-save progress
-commit response
-push updated folder</div>
+            <div class="repo-step-kicker">Teacher Layer</div>
+            <h3>Adults stage the program from real folders</h3>
+            <p>Teachers can build from actual directories like assignment packs, reference guides, AI assistant prompts, and site dashboards instead of relying on hidden platform menus.</p>
+            <div class="repo-flow-code">assignments/social-studies/
+resources/un_countries.csv
+teachers/ai-assistants/
+teachers/sites/index.html
+teachers/sites/mind-map/</div>
           </div>
 
           <div class="repo-step">
-            <div class="repo-step-kicker">Project Studio</div>
-            <h3>Projects live beside coursework</h3>
-            <p>Coding, websites, research, and experiments sit inside the same system, so students build real artifacts as they learn.</p>
-            <div class="repo-flow-code">projects/
-  coding/
-  websites/
-  experiments/
-  portfolio/</div>
+            <div class="repo-step-kicker">Student Workspace</div>
+            <h3>Each learner gets a durable working folder</h3>
+            <p>Students can have a named workspace with grade-level subjects, a schedule file, and a README hub so daily work and long-term portfolio pieces stay in one place.</p>
+            <div class="repo-flow-code">students/student-name/
+  grade-5/
+    math/
+    stem/
+    language-arts/
+    social-studies/
+  schedule.csv
+  README.md</div>
           </div>
 
         </div>
 
         <div class="system-map-panel">
           <img src="images/opentutor-repo-map.png" alt="Technical repository workflow map showing student folders, subjects, assignments, and project outputs connected together" />
-          <div class="system-map-caption">Student roots, subject folders, assignment packets, project branches, and committed work stay organized as a visible technical workflow.</div>
+          <div class="system-map-caption">The diagram matches the live OpenTutor pattern: shared assignments and resources feed student workspaces, while teacher dashboards and prompts keep planning visible and editable.</div>
         </div>
       </section>
 
@@ -1988,36 +1944,17 @@ push updated folder</div>
 
           <div class="knowledge-radar-notes">
             <div class="knowledge-note">
-              <strong>For parents</strong>
+              <strong>For parents and students</strong>
               <p>Organize clear subfolders like <code>/math</code>, <code>/science</code>, <code>/programming</code>, <code>/history</code>, <code>/reading</code>, and <code>/projects</code>.</p>
-              <p>Curate the library, monitor progress, and keep resources appropriate.</p>
+              <p>Parents curate the library, monitor progress, and keep resources appropriate. Students check it regularly for things to read, watch, and review without changing shared materials.</p>
             </div>
             <div class="knowledge-note">
-              <strong>For students</strong>
-              <p>Check the folder regularly for things to read, watch, and review.</p>
-              <p>Do not change or delete shared resources without permission.</p>
-            </div>
-            <div class="knowledge-note">
-              <strong>Quick reference guides</strong>
+              <strong>Reference materials</strong>
               <p>Keep practical cheat sheets ready: file types, measurements, world facts, finance, physics, chemistry, U.S. basics, and history guides.</p>
-              <p>These should be fast reopen resources, not full lessons.</p>
+              <p>Store reusable CSV and JSON datasets for projects, coding, analysis, and research. Group online tools by purpose, not brand.</p>
             </div>
             <div class="knowledge-note">
-              <strong>Datasets and structured materials</strong>
-              <p>Store usable files like CSV and JSON datasets for projects, coding, analysis, and research.</p>
-            </div>
-            <div class="knowledge-note">
-              <strong>Essential online tools</strong>
-              <p>Group tools by purpose, not brand.</p>
-              <ul>
-                <li>Productivity</li>
-                <li>Development</li>
-                <li>AI research</li>
-                <li>Finance, design, video</li>
-              </ul>
-            </div>
-            <div class="knowledge-note">
-              <strong>What this section implies for OpenTutor</strong>
+              <strong>What this means for OpenTutor</strong>
               <p>This is a maintained learning library, not a fixed curriculum map.</p>
               <p>Parents and teachers curate it. AI helps turn it into worksheets, assignments, prompts, and review materials.</p>
             </div>
@@ -2036,47 +1973,41 @@ push updated folder</div>
             <div class="setup-cluster-kicker">Accounts + Repos</div>
             <h3>Start with identity and ownership</h3>
             <p>Parents and students should have real GitHub accounts so assignments, commits, and project history map to actual people.</p>
-            <div class="micro-list">
-              <span>create the parent GitHub account</span>
-              <span>create student accounts for portfolio ownership</span>
-              <span>optionally add GitHub Education or Classroom later</span>
-            </div>
-            <div class="setup-cluster-links">
-              <a class="repo-link" href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github" target="_blank" rel="noreferrer">Create a GitHub account</a>
-              <a class="repo-link" href="https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account" target="_blank" rel="noreferrer">GitHub account onboarding</a>
-              <a class="repo-link" href="https://docs.github.com/en/education/quickstart" target="_blank" rel="noreferrer">GitHub educator quickstart</a>
-            </div>
+            <ul class="setup-bullets">
+              <li>Create the parent GitHub account.</li>
+              <li>Create student accounts for portfolio ownership.</li>
+              <li>Optionally add GitHub Education or Classroom later.</li>
+              <li><a class="repo-link" href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github" target="_blank" rel="noreferrer">Create a GitHub account</a></li>
+              <li><a class="repo-link" href="https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account" target="_blank" rel="noreferrer">GitHub account onboarding</a></li>
+              <li><a class="repo-link" href="https://docs.github.com/en/education/quickstart" target="_blank" rel="noreferrer">GitHub educator quickstart</a></li>
+            </ul>
           </div>
 
           <div class="setup-cluster">
             <div class="setup-cluster-kicker">Discord Classroom</div>
             <h3>Build the classroom shell</h3>
             <p>Discord becomes the day-to-day classroom layer, so the main job is creating a clean server with obvious subject and admin spaces.</p>
-            <div class="micro-list">
-              <span>create the parent Discord account</span>
-              <span>create the homeschool server and subject channels</span>
-              <span>reserve admin and logs channels for oversight</span>
-            </div>
-            <div class="setup-cluster-links">
-              <a class="repo-link" href="https://support.discord.com/hc/en-us/articles/31676852332439-Discord-Sign-Up-and-Registration-Guide" target="_blank" rel="noreferrer">Create a Discord account</a>
-              <a class="repo-link" href="https://support.discord.com/hc/en-us/articles/204849977-How-do-I-create-a-server" target="_blank" rel="noreferrer">Create a Discord server</a>
-            </div>
+            <ul class="setup-bullets">
+              <li>Create the parent Discord account.</li>
+              <li>Create the homeschool server and subject channels.</li>
+              <li>Reserve admin and logs channels for oversight.</li>
+              <li><a class="repo-link" href="https://support.discord.com/hc/en-us/articles/31676852332439-Discord-Sign-Up-and-Registration-Guide" target="_blank" rel="noreferrer">Create a Discord account</a></li>
+              <li><a class="repo-link" href="https://support.discord.com/hc/en-us/articles/204849977-How-do-I-create-a-server" target="_blank" rel="noreferrer">Create a Discord server</a></li>
+            </ul>
           </div>
 
           <div class="setup-cluster">
             <div class="setup-cluster-kicker">Bot + Runtime</div>
             <h3>Install the tutor safely</h3>
             <p>Create the Discord application, install the bot with limited scopes, then run the repo with the correct bot token and Anthropic key.</p>
-            <div class="micro-list">
-              <span>create the Discord application and bot user</span>
-              <span>install with only the permissions the classroom needs</span>
-              <span>run the Vibe repo and connect it to your server</span>
-            </div>
-            <div class="setup-cluster-links">
-              <a class="repo-link" href="https://discord.com/developers/docs/topics/oauth2" target="_blank" rel="noreferrer">Discord OAuth2 and installation</a>
-              <a class="repo-link" href="https://discord.com/developers/docs/topics/permissions" target="_blank" rel="noreferrer">Discord permissions reference</a>
-              <a class="repo-link" href="https://github.com/murderszn/vibe" target="_blank" rel="noreferrer">Open the Vibe source repository</a>
-            </div>
+            <ul class="setup-bullets">
+              <li>Create the Discord application and bot user.</li>
+              <li>Install with only the permissions the classroom needs.</li>
+              <li>Run the Vibe repo and connect it to your server.</li>
+              <li><a class="repo-link" href="https://discord.com/developers/docs/topics/oauth2" target="_blank" rel="noreferrer">Discord OAuth2 and installation</a></li>
+              <li><a class="repo-link" href="https://discord.com/developers/docs/topics/permissions" target="_blank" rel="noreferrer">Discord permissions reference</a></li>
+              <li><a class="repo-link" href="https://github.com/murderszn/vibe" target="_blank" rel="noreferrer">Open the Vibe source repository</a></li>
+            </ul>
           </div>
         </div>
 
