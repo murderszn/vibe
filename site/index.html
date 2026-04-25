@@ -3,23 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OpenTutor v1.0: AI-Backed Homeschooling Model</title>
-  <meta name="description" content="OpenTutor v1.0 is an open model for homeschooling leveraging GitHub, Discord, and a Claude-backed AI tutor for structured, tech-forward learning." />
-  <meta name="keywords" content="OpenTutor, homeschooling, AI tutor, Discord bot, Claude, GitHub education, learning resources" />
-  <meta name="author" content="Vibe" />
+  <title>OpenTutor v1.0 | AI Homeschooling with GitHub, Discord &amp; Claude</title>
+  <meta name="description" content="OpenTutor is a parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a Claude-backed tutor named Vibe." />
+  <meta name="author" content="@murderszn" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="theme-color" content="#f8fafc" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://murderszn.github.io/vibe/site/" />
+  <link rel="icon" href="images/opentutor-mark.png" type="image/png" />
+  <link rel="apple-touch-icon" href="images/opentutor-mark.png" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="OpenTutor v1.0: AI-Backed Homeschooling Model" />
-  <meta property="og:description" content="OpenTutor v1.0 is an open model for homeschooling leveraging GitHub, Discord, and a Claude-backed AI tutor." />
+  <meta property="og:site_name" content="OpenTutor" />
+  <meta property="og:title" content="OpenTutor v1.0 | AI Homeschooling with GitHub, Discord &amp; Claude" />
+  <meta property="og:description" content="A parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a Claude-backed tutor named Vibe." />
+  <meta property="og:url" content="https://murderszn.github.io/vibe/site/" />
+  <meta property="og:image" content="https://murderszn.github.io/vibe/site/images/modern_homeschool_flow.png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="OpenTutor homeschool flow diagram connecting GitHub, Discord, Vibe, and parent oversight." />
+  <meta property="og:locale" content="en_US" />
   
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="OpenTutor v1.0: AI-Backed Homeschooling Model" />
-  <meta property="twitter:description" content="OpenTutor v1.0 is an open model for homeschooling leveraging GitHub, Discord, and a Claude-backed AI tutor." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OpenTutor v1.0 | AI Homeschooling with GitHub, Discord &amp; Claude" />
+  <meta name="twitter:description" content="A parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a Claude-backed tutor named Vibe." />
+  <meta name="twitter:image" content="https://murderszn.github.io/vibe/site/images/modern_homeschool_flow.png" />
+  <meta name="twitter:image:alt" content="OpenTutor homeschool flow diagram connecting GitHub, Discord, Vibe, and parent oversight." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="images/modern_homeschool_flow.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://murderszn.github.io/vibe/site/#webpage",
+          "url": "https://murderszn.github.io/vibe/site/",
+          "name": "OpenTutor v1.0 | AI Homeschooling with GitHub, Discord & Claude",
+          "description": "OpenTutor is a parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a Claude-backed tutor named Vibe.",
+          "inLanguage": "en-US",
+          "isPartOf": {
+            "@id": "https://murderszn.github.io/vibe/site/#website"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://murderszn.github.io/vibe/site/images/modern_homeschool_flow.png",
+            "width": 1024,
+            "height": 1024
+          },
+          "about": [
+            "AI-assisted homeschooling",
+            "parent-supervised education",
+            "GitHub education",
+            "Discord classroom",
+            "Claude-backed tutoring"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://murderszn.github.io/vibe/site/#website",
+          "url": "https://murderszn.github.io/vibe/site/",
+          "name": "OpenTutor",
+          "publisher": {
+            "@type": "Organization",
+            "name": "OpenTutor",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://murderszn.github.io/vibe/site/images/opentutor-mark.png",
+              "width": 1024,
+              "height": 1024
+            }
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "@id": "https://github.com/murderszn/open-tutor#source",
+          "name": "OpenTutor",
+          "codeRepository": "https://github.com/murderszn/open-tutor",
+          "programmingLanguage": "Python",
+          "applicationCategory": "EducationalApplication",
+          "description": "Open-source homeschool infrastructure for AI-assisted, parent-supervised learning workflows."
+        }
+      ]
+    }
+  </script>
   <style>
     :root {
       /* Pearlescent / Monochromatic Light Theme */
@@ -386,18 +458,81 @@
       color: var(--primary-hover);
     }
 
+    .share-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin: -18px 0 28px;
+      opacity: 0.34;
+      transition: opacity 0.18s ease;
+    }
+
+    .share-actions:hover,
+    .share-actions:focus-within {
+      opacity: 0.88;
+    }
+
+    .share-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      padding: 0;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: rgba(100,116,139,0.72);
+      font: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .share-btn:hover,
+    .share-btn:focus-visible {
+      background: rgba(255,255,255,0.84);
+      border-color: var(--border);
+      color: var(--primary-hover);
+      outline: none;
+    }
+
+    .share-btn svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    .share-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     .hero-image-wrapper {
       width: 100%;
       overflow: hidden;
       border-radius: 20px;
       border: 1px solid var(--border);
+      background: #eef2f7;
     }
 
     .hero-image {
-      width: 100%;
+      width: min(100%, 1024px);
+      height: auto;
+      margin: 0 auto;
       display: block;
-      aspect-ratio: 16 / 9.25;
-      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
       object-position: center;
       filter: contrast(1.05) brightness(1.02);
     }
@@ -468,21 +603,9 @@
       overflow-wrap: anywhere;
     }
 
-    .intro-panel {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: var(--shadow-sm);
-      padding: clamp(24px, 2.6vw, 34px);
-      max-width: 1140px;
-    }
-
-    .intro-lead {
-      margin: 0 0 16px;
-      font-size: 1.04rem;
-      line-height: 1.75;
+    .section-subtitle-detail {
+      margin-top: 12px;
       color: var(--text);
-      text-wrap: pretty;
     }
 
     .section-note {
@@ -494,49 +617,97 @@
     }
 
     .thesis-pillars {
-      margin: 18px 0 0;
+      margin: 0;
       padding: 0;
       list-style: none;
       display: grid;
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
 
     .thesis-pillars li {
       margin: 0;
-      font-size: 0.97rem;
-      line-height: 1.68;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(248,250,252,0.9) 0%, #ffffff 100%);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .thesis-pillar-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .thesis-pillars li strong {
+      display: block;
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .thesis-pillars li span {
       color: var(--muted);
-      padding-left: 16px;
-      border-left: 2px solid var(--primary-soft);
+      font-size: 0.93rem;
+      line-height: 1.65;
     }
 
     .audience-grid {
-      margin-top: 8px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      gap: 20px;
     }
 
     .audience-card {
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      background: linear-gradient(180deg, rgba(248,250,252,0.9) 0%, #ffffff 100%);
+      border-radius: 16px;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(248,250,252,0.84) 100%);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .audience-card-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .audience-card-kicker {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
     }
 
     .audience-card h3 {
-      margin: 0 0 8px;
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--primary);
-      font-weight: 700;
+      margin: 0 0 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
     }
 
     .audience-card p {
       margin: 0;
-      color: var(--text);
-      font-size: 0.97rem;
+      color: var(--muted);
+      font-size: 0.93rem;
       line-height: 1.65;
       text-wrap: pretty;
     }
@@ -550,6 +721,7 @@
     @media (max-width: 800px) {
       .workflow-grid { grid-template-columns: 1fr; }
       .audience-grid { grid-template-columns: 1fr; }
+      .thesis-pillars { grid-template-columns: 1fr; }
     }
 
     .workflow-card {
@@ -1195,6 +1367,7 @@
     .image-panel-grid,
     .strengths-grid,
     .timeline-gallery,
+    .github-support-grid,
     .wallet-grid {
       display: grid;
       gap: 24px;
@@ -1219,10 +1392,16 @@
       margin-top: 28px;
     }
 
+    .github-support-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-bottom: 28px;
+    }
+
     @media (max-width: 980px) {
       .scan-strip,
       .strengths-grid,
       .timeline-gallery,
+      .github-support-grid,
       .wallet-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1233,6 +1412,7 @@
       .scan-strip,
       .strengths-grid,
       .timeline-gallery,
+      .github-support-grid,
       .wallet-grid {
         grid-template-columns: 1fr;
       }
@@ -1259,10 +1439,9 @@
 
     .system-map-panel img {
       width: 100%;
+      height: auto;
       display: block;
-      aspect-ratio: 16 / 10;
       border-radius: 18px;
-      object-fit: cover;
       background: #eef2f7;
     }
 
@@ -1328,9 +1507,8 @@
 
     .diagram-image {
       width: 100%;
+      height: auto;
       display: block;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
       border-radius: 18px;
       border: 1px solid rgba(203,213,225,0.86);
       background: #eef2f7;
@@ -1412,9 +1590,8 @@
 
     .image-panel img {
       width: 100%;
+      height: auto;
       display: block;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
       background: #eef2f7;
     }
 
@@ -1636,6 +1813,90 @@
       border-color: var(--primary);
     }
 
+    .github-support-card {
+      padding: 24px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(248,250,252,0.84) 100%);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .github-support-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .github-support-icon {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: var(--text);
+      color: #ffffff;
+    }
+
+    .github-support-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .github-support-kicker {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .github-support-card h3 {
+      margin: 2px 0 0;
+      color: var(--text);
+      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .github-support-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
+      text-wrap: pretty;
+    }
+
+    .github-support-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 9px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.9);
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .github-support-link:hover {
+      background: #ffffff;
+      border-color: var(--primary);
+      color: var(--primary-hover);
+    }
+
+    .github-support-link svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
     .donation-note {
       margin-top: 18px;
       color: var(--muted);
@@ -1714,11 +1975,6 @@
         font-size: 0.88rem;
       }
 
-      .hero-image {
-        aspect-ratio: auto;
-        min-height: 240px;
-      }
-
       .section {
         margin-bottom: 84px;
         padding-top: 18px;
@@ -1736,14 +1992,6 @@
       .section-subtitle {
         font-size: 0.98rem;
         line-height: 1.7;
-      }
-
-      .intro-panel {
-        padding: 20px;
-      }
-
-      .intro-lead {
-        font-size: 1rem;
       }
 
       .audience-card p {
@@ -1862,6 +2110,16 @@
         font-size: clamp(1.75rem, 10vw, 2.3rem);
       }
 
+      .share-actions {
+        gap: 6px;
+        margin-top: -14px;
+        opacity: 0.46;
+      }
+
+      .share-btn {
+        flex: 0 0 30px;
+      }
+
       .section {
         margin-bottom: 68px;
       }
@@ -1872,12 +2130,9 @@
       .setup-cluster,
       .repo-step,
       .knowledge-note,
+      .github-support-card,
       .wallet-card {
         padding: 18px;
-      }
-
-      .hero-image {
-        min-height: 210px;
       }
 
       .timeline-cell,
@@ -1899,7 +2154,7 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="logo-container">
-        <img src="images/opentutor-mark.png" alt="OpenTutor cat mark" class="logo-img" />
+        <img src="images/opentutor-mark.png" alt="OpenTutor cat mark" class="logo-img" width="1024" height="1024" decoding="async" />
         <div class="logo-copy">
           <span class="logo-text">OpenTutor</span>
           <span class="logo-subtext">v1.0</span>
@@ -1912,19 +2167,14 @@
 
       <nav class="sidebar-nav">
         <div class="sidebar-section-label">Document Map</div>
-        <a href="#overview" class="nav-link nav-link-foundation">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Overview
-        </a>
-        <a href="#thesis" class="nav-link nav-link-foundation">
+        <a href="#thesis" class="nav-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M3 12h18"/></svg>
           Thesis
         </a>
-        <a href="#who-for" class="nav-link nav-link-foundation">
+        <a href="#who-for" class="nav-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 21c0-3 3-5 7-5"/><path d="M12 21c0-3 2-5 5-5"/></svg>
           Who This Is For
         </a>
-        <div class="sidebar-section-label">System and Execution</div>
         <a href="#how-it-works" class="nav-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           System Architecture
@@ -1964,23 +2214,17 @@
       </nav>
 
       <div class="sidebar-footer">
-        <div class="sidebar-footer-actions">
-          <details class="github-dropdown">
-            <summary class="github-btn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              GitHub Repositories
-              <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="dropdown-content">
-              <a href="https://github.com/murderszn/open-tutor" target="_blank">OpenTutor Repo</a>
-              <a href="https://github.com/murderszn/vibe" target="_blank">Vibe Repo</a>
-            </div>
-          </details>
-          <a href="#support" class="support-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>
-            Support OpenTutor
-          </a>
-        </div>
+        <details class="github-dropdown">
+          <summary class="github-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub Repositories
+            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="dropdown-content">
+            <a href="https://github.com/murderszn/open-tutor" target="_blank">OpenTutor Repo</a>
+            <a href="https://github.com/murderszn/vibe" target="_blank">Vibe Repo</a>
+          </div>
+        </details>
       </div>
     </aside>
 
@@ -1997,8 +2241,27 @@
           <span>By <a href="https://github.com/murderszn" target="_blank" rel="noreferrer">@murderszn</a></span>
         </div>
 
+        <div class="share-actions" aria-label="Share OpenTutor">
+          <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmurderszn.github.io%2Fvibe%2Fsite%2F&amp;text=OpenTutor%20v1.0%20%7C%20AI%20Homeschooling%20with%20GitHub%2C%20Discord%20%26%20Claude" target="_blank" rel="noreferrer" aria-label="Share on Twitter" title="Twitter" data-share-twitter>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.55l-5.13-6.71L5.2 22H1.94l7.61-8.7L1.5 2h6.71l4.64 6.14L18.244 2Zm-1.14 17.9h1.8L7.23 3.99H5.29L17.104 19.9Z"/></svg>
+            <span class="share-label">Twitter</span>
+          </a>
+          <a class="share-btn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fmurderszn.github.io%2Fvibe%2Fsite%2F&amp;title=OpenTutor%20v1.0%20%7C%20AI%20Homeschooling%20with%20GitHub%2C%20Discord%20%26%20Claude" target="_blank" rel="noreferrer" aria-label="Share on Reddit" title="Reddit" data-share-reddit>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.14a2.35 2.35 0 0 0-3.98-1.69c-1.45-1-3.41-1.64-5.59-1.75l.95-4.48 3.1.66a1.7 1.7 0 1 0 .27-1.25l-3.72-.79a.63.63 0 0 0-.74.49l-1.13 5.35c-2.24.08-4.27.73-5.76 1.75a2.35 2.35 0 1 0-2.59 3.83 4.64 4.64 0 0 0-.07.8c0 3.52 4.15 6.38 9.26 6.38s9.26-2.86 9.26-6.38c0-.26-.02-.52-.07-.77A2.35 2.35 0 0 0 22 12.14ZM6.68 14.24a1.42 1.42 0 1 1 2.84 0 1.42 1.42 0 0 1-2.84 0Zm8.62 3.7c-.94.94-2.73 1.01-3.3 1.01s-2.36-.07-3.3-1.01a.58.58 0 0 1 .82-.82c.59.59 1.84.67 2.48.67s1.89-.08 2.48-.67a.58.58 0 0 1 .82.82Zm-.4-2.28a1.42 1.42 0 1 1 0-2.84 1.42 1.42 0 0 1 0 2.84Z"/></svg>
+            <span class="share-label">Reddit</span>
+          </a>
+          <a class="share-btn" href="mailto:?subject=OpenTutor%20v1.0%20%7C%20AI%20Homeschooling%20with%20GitHub%2C%20Discord%20%26%20Claude&amp;body=https%3A%2F%2Fmurderszn.github.io%2Fvibe%2Fsite%2F" aria-label="Share by email" title="Email" data-share-email>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span class="share-label">Email</span>
+          </a>
+          <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmurderszn.github.io%2Fvibe%2Fsite%2F" target="_blank" rel="noreferrer" aria-label="Share on LinkedIn" title="LinkedIn" data-share-linkedin>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.76C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.76 24h20.47c.97 0 1.77-.78 1.77-1.73V1.72C24 .77 23.2 0 22.23 0Z"/></svg>
+            <span class="share-label">LinkedIn</span>
+          </a>
+        </div>
+
         <div class="hero-image-wrapper">
-          <img src="images/modern_homeschool_flow.png" alt="Homeschool Flow Diagram" class="hero-image" />
+          <img src="images/modern_homeschool_flow.png" alt="OpenTutor homeschool flow diagram connecting GitHub, Discord, Vibe, and parent oversight" class="hero-image" width="1024" height="1024" decoding="async" fetchpriority="high" />
         </div>
 
       </section>
@@ -2007,40 +2270,66 @@
         <div class="section-header">
           <h2 class="section-title">Thesis: A Supervised Learning Operating System</h2>
           <p class="section-subtitle">OpenTutor argues that the next durable model for home education is a supervised learning operating system: one that joins curriculum, communication, tutoring, assessment, and portfolio evidence in a single, reviewable workflow.</p>
+          <p class="section-subtitle section-subtitle-detail">This document is written as a working white paper for AI-assisted, parent-supervised education. In this model, GitHub serves as the durable academic record, Discord serves as the live classroom environment, and Vibe (Claude-backed) serves as the on-demand tutor operating inside clear human guardrails.</p>
         </div>
-        <div class="intro-panel">
-          <p class="intro-lead">This document is written as a working white paper for AI-assisted, parent-supervised education. In this model, GitHub serves as the durable academic record, Discord serves as the live classroom environment, and Vibe (Claude-backed) serves as the on-demand tutor operating inside clear human guardrails.</p>
-          <ul class="thesis-pillars">
-            <li><strong>Governance before automation:</strong> parent and educator oversight is a design requirement, not an optional layer.</li>
-            <li><strong>Transparency by default:</strong> assignments, revisions, feedback, and progress are visible through open tools rather than hidden behind proprietary dashboards.</li>
-            <li><strong>Continuity of learning evidence:</strong> day-to-day tutoring interactions connect to long-term portfolios, making student growth easier to audit and support.</li>
-          </ul>
-        </div>
+        <ul class="thesis-pillars">
+          <li>
+            <div class="thesis-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V7l-8-4-8 4v5c0 6 8 10 8 10Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <strong>Governance before automation</strong>
+            <span>Parent and educator oversight is a design requirement, not an optional layer.</span>
+          </li>
+          <li>
+            <div class="thesis-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <strong>Transparency by default</strong>
+            <span>Assignments, revisions, feedback, and progress are visible through open tools rather than hidden behind proprietary dashboards.</span>
+          </li>
+          <li>
+            <div class="thesis-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <strong>Continuity of learning evidence</strong>
+            <span>Day-to-day tutoring interactions connect to long-term portfolios, making student growth easier to audit and support.</span>
+          </li>
+        </ul>
       </section>
 
       <section id="who-for" class="section">
         <div class="section-header">
           <h2 class="section-title">Who This Is For</h2>
           <p class="section-subtitle">OpenTutor is designed for communities that want AI support without sacrificing visibility, accountability, or human instructional leadership.</p>
+          <p class="section-subtitle section-subtitle-detail">The current release prioritizes operators who are comfortable managing curriculum, communication, and AI tutoring as one connected system rather than a collection of disconnected education apps.</p>
         </div>
-        <div class="intro-panel">
-          <p class="intro-lead">The current release prioritizes operators who are comfortable managing curriculum, communication, and AI tutoring as one connected system rather than a collection of disconnected education apps.</p>
-          <div class="audience-grid">
-            <article class="audience-card">
-              <h3>Primary audience</h3>
-              <p>Parent-led homeschool families who want visible, reviewable AI-assisted instruction and a long-term record of student growth.</p>
-            </article>
-            <article class="audience-card">
-              <h3>Secondary audience</h3>
-              <p>Microschools, learning pods, independent tutors, and alternative programs coordinating multi-student workflows in lightweight, open infrastructure.</p>
-            </article>
-            <article class="audience-card">
-              <h3>Emerging audience</h3>
-              <p>Schools piloting supervised AI, project-based assessment, and portfolio-driven documentation before larger institutional adoption.</p>
-            </article>
-          </div>
-          <p class="section-note">OpenTutor v1.0 is best treated as an experimental operating model, not a turnkey accredited school package or compliance platform.</p>
+        <div class="audience-grid">
+          <article class="audience-card">
+            <div class="audience-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="audience-card-kicker">Primary</div>
+            <h3>Homeschool Families</h3>
+            <p>Parent-led homeschool families who want visible, reviewable AI-assisted instruction and a long-term record of student growth.</p>
+          </article>
+          <article class="audience-card">
+            <div class="audience-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="audience-card-kicker">Secondary</div>
+            <h3>Microschools & Learning Pods</h3>
+            <p>Microschools, learning pods, independent tutors, and alternative programs coordinating multi-student workflows in lightweight, open infrastructure.</p>
+          </article>
+          <article class="audience-card">
+            <div class="audience-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+            </div>
+            <div class="audience-card-kicker">Emerging</div>
+            <h3>Schools & Institutions</h3>
+            <p>Schools piloting supervised AI, project-based assessment, and portfolio-driven documentation before larger institutional adoption.</p>
+          </article>
         </div>
+        <p class="section-note">OpenTutor v1.0 is best treated as an experimental operating model, not a turnkey accredited school package or compliance platform.</p>
       </section>
 
       <!-- HOW IT WORKS -->
@@ -2083,7 +2372,7 @@
         </div>
 
         <div class="system-map-panel">
-          <img src="images/opentutor-integration-map.png" alt="Technical integration map showing repositories, channels, tutor layer, and parent oversight connected as one system" />
+          <img src="images/opentutor-integration-map.png" alt="Technical integration map showing repositories, channels, tutor layer, and parent oversight connected as one system" width="1536" height="1024" loading="lazy" decoding="async" />
           <div class="system-map-caption">Repositories, classroom channels, student work surfaces, tutoring, and parent review connect as one operating model rather than a stack of separate apps.</div>
         </div>
       </section>
@@ -2103,7 +2392,7 @@
               </div>
             </div>
 
-            <img class="diagram-image" src="images/diagram.png" alt="Systems image showing the OpenTutor homeschool model with Discord, GitHub, tutoring, and parent oversight connected visually." />
+            <img class="diagram-image" src="images/diagram.png" alt="Systems image showing the OpenTutor homeschool model with Discord, GitHub, tutoring, and parent oversight connected visually." width="1536" height="1024" loading="lazy" decoding="async" />
             <p class="system-map-caption">One live classroom surface, one parent operator, one curriculum layer, and one tutor layer work together without hiding how the system is actually implemented.</p>
           </div>
         </div>
@@ -2207,7 +2496,7 @@ teachers/sites/mind-map/</div>
         </div>
 
         <div class="system-map-panel">
-          <img src="images/opentutor-repo-map.png" alt="Technical repository workflow map showing student folders, subjects, assignments, and project outputs connected together" />
+          <img src="images/opentutor-repo-map.png" alt="Technical repository workflow map showing student folders, subjects, assignments, and project outputs connected together" width="1536" height="1024" loading="lazy" decoding="async" />
           <div class="system-map-caption">The diagram matches the live OpenTutor pattern: shared assignments and resources feed student workspaces, while teacher dashboards and prompts keep planning visible and editable.</div>
         </div>
       </section>
@@ -2220,7 +2509,7 @@ teachers/sites/mind-map/</div>
 
         <div class="knowledge-radar">
           <div class="knowledge-net-wrap">
-            <img class="knowledge-net-image" src="images/knowledge-resources.png" alt="Learning resources map showing parent guidance, student guidance, subject folders, quick reference guides, datasets, and essential online tools." />
+            <img class="knowledge-net-image" src="images/knowledge-resources.png" alt="Learning resources map showing parent guidance, student guidance, subject folders, quick reference guides, datasets, and essential online tools." width="2682" height="1630" loading="lazy" decoding="async" />
           </div>
 
           <div class="knowledge-radar-notes">
@@ -2351,7 +2640,7 @@ teachers/sites/mind-map/</div>
 
         <div class="image-panel-grid">
           <div class="image-panel">
-            <img src="images/vibe-tutor-classroom.png" alt="Illustration of Vibe tutoring inside a calm digital classroom" />
+            <img src="images/vibe-tutor-classroom.png" alt="Illustration of Vibe tutoring inside a calm digital classroom" width="1536" height="1024" loading="lazy" decoding="async" />
             <div class="image-panel-copy">
               <h3>Tutor support in subject channels</h3>
               <p>Subject channels, prompts, and tutor help live in the same classroom flow, so support appears where students are already working.</p>
@@ -2359,7 +2648,7 @@ teachers/sites/mind-map/</div>
           </div>
 
           <div class="image-panel">
-            <img src="images/vibe-tutor-strengths.png" alt="Illustration showing Vibe's tutoring strengths and classroom support" />
+            <img src="images/vibe-tutor-strengths.png" alt="Illustration showing Vibe's tutoring strengths and classroom support" width="1536" height="1024" loading="lazy" decoding="async" />
             <div class="image-panel-copy">
               <h3>Context-aware tutor support</h3>
               <p>Recent context, speaker awareness, concise replies, and guardrails turn tutoring into a practical classroom layer instead of a generic chat window.</p>
@@ -2524,7 +2813,7 @@ teachers/sites/mind-map/</div>
 
         <div class="timeline-gallery">
           <div class="image-panel">
-            <img src="images/opentutor-morning.png" alt="Pearlescent cat illustration of the morning homeschool check-in" />
+            <img src="images/opentutor-morning.png" alt="Pearlescent cat illustration of the morning homeschool check-in" width="1536" height="1024" loading="lazy" decoding="async" />
             <div class="image-panel-copy">
               <h3>Morning check-in</h3>
               <p>Orientation, clarity, and visible expectations establish the day before work begins.</p>
@@ -2532,7 +2821,7 @@ teachers/sites/mind-map/</div>
           </div>
 
           <div class="image-panel">
-            <img src="images/opentutor-study.png" alt="Pearlescent cat illustration of focused homeschool study and guided work" />
+            <img src="images/opentutor-study.png" alt="Pearlescent cat illustration of focused homeschool study and guided work" width="1536" height="1024" loading="lazy" decoding="async" />
             <div class="image-panel-copy">
               <h3>Focused study</h3>
               <p>Subject channels, repository materials, and lightweight tutor support stay connected during focused work.</p>
@@ -2540,7 +2829,7 @@ teachers/sites/mind-map/</div>
           </div>
 
           <div class="image-panel">
-            <img src="images/opentutor-review.png" alt="Pearlescent cat illustration of homeschool review and end-of-day reflection" />
+            <img src="images/opentutor-review.png" alt="Pearlescent cat illustration of homeschool review and end-of-day reflection" width="1536" height="1024" loading="lazy" decoding="async" />
             <div class="image-panel-copy">
               <h3>Commit and review</h3>
               <p>Finished work gets committed back into GitHub, and end-of-day review makes progress visible and easier to improve the next day.</p>
@@ -2611,7 +2900,43 @@ teachers/sites/mind-map/</div>
       <section id="support" class="section">
         <div class="section-header">
           <h2 class="section-title">Support the Project</h2>
-          <p class="section-subtitle">OpenTutor is an open-source homeschool infrastructure project. Donations can fund API costs, curriculum maintenance, documentation, and continued development.</p>
+          <p class="section-subtitle">OpenTutor is an open-source homeschool infrastructure project. GitHub stars and forks help people discover, test, and improve the project; donations can fund API costs, curriculum maintenance, documentation, and continued development.</p>
+        </div>
+
+        <div class="github-support-grid">
+          <article class="github-support-card">
+            <div class="github-support-head">
+              <span class="github-support-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </span>
+              <div>
+                <span class="github-support-kicker">GitHub Star</span>
+                <h3>Star the OpenTutor repo</h3>
+              </div>
+            </div>
+            <p>Stars help more parents and educators find the project and signal that the model is worth continuing to build.</p>
+            <a class="github-support-link" href="https://github.com/murderszn/open-tutor" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Star on GitHub
+            </a>
+          </article>
+
+          <article class="github-support-card">
+            <div class="github-support-head">
+              <span class="github-support-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </span>
+              <div>
+                <span class="github-support-kicker">GitHub Fork</span>
+                <h3>Fork the project</h3>
+              </div>
+            </div>
+            <p>Forks make it easier to adapt the model, test curriculum changes, and send improvements back through pull requests.</p>
+            <a class="github-support-link" href="https://github.com/murderszn/open-tutor/fork" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 9v3a6 6 0 0 0 6 6h3"/><path d="M18 15V5"/><path d="m15 8 3-3 3 3"/></svg>
+              Fork on GitHub
+            </a>
+          </article>
         </div>
 
         <div class="wallet-grid">
@@ -2643,7 +2968,7 @@ teachers/sites/mind-map/</div>
           <p>A parent-operated homeschool model built around GitHub, Discord, and a Claude-backed tutor layer, with visible systems, clear ownership, and durable student work.</p>
         </div>
         <div class="site-footer-links">
-          <a class="repo-link" href="https://github.com/murderszn/vibe" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="repo-link" href="https://github.com/murderszn/open-tutor" target="_blank" rel="noreferrer">OpenTutor GitHub</a>
           <a class="repo-link" href="#setup-guides">Setup Guides</a>
           <a class="repo-link" href="#support">Support</a>
         </div>
@@ -2675,23 +3000,73 @@ teachers/sites/mind-map/</div>
     setActiveLink();
     window.addEventListener('scroll', setActiveLink, { passive: true });
 
+    const canonicalUrl = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
+    const isPublicPage = /^https?:$/.test(window.location.protocol) && !['localhost', '127.0.0.1'].includes(window.location.hostname);
+    const pageUrl = isPublicPage ? window.location.href.split('#')[0] : canonicalUrl;
+    const pageTitle = document.title;
+    const pageDescription = document.querySelector('meta[name="description"]')?.content || '';
+
+    const copyToClipboard = async (value) => {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(value);
+        return;
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = value;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    };
+
+    const setTemporaryButtonText = (button, text, fallbackText) => {
+      const label = button.querySelector('[data-button-label]');
+      if (label) {
+        label.textContent = text;
+      } else {
+        button.textContent = text;
+      }
+
+      setTimeout(() => {
+        if (label) {
+          label.textContent = fallbackText;
+        } else {
+          button.textContent = fallbackText;
+        }
+      }, 1200);
+    };
+
+    document.querySelectorAll('[data-share-twitter]').forEach((link) => {
+      link.href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
+    });
+
+    document.querySelectorAll('[data-share-reddit]').forEach((link) => {
+      link.href = `https://www.reddit.com/submit?url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(pageTitle)}`;
+    });
+
+    document.querySelectorAll('[data-share-email]').forEach((link) => {
+      const body = pageDescription ? `${pageDescription}\n\n${pageUrl}` : pageUrl;
+      link.href = `mailto:?subject=${encodeURIComponent(pageTitle)}&body=${encodeURIComponent(body)}`;
+    });
+
+    document.querySelectorAll('[data-share-linkedin]').forEach((link) => {
+      link.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+    });
+
     document.querySelectorAll('[data-copy-wallet]').forEach((button) => {
       button.addEventListener('click', async () => {
         const value = button.closest('.wallet-card')?.querySelector('[data-wallet-value]')?.textContent?.trim();
         if (!value) return;
 
         try {
-          await navigator.clipboard.writeText(value);
-          const original = button.textContent;
-          button.textContent = 'Copied';
-          setTimeout(() => {
-            button.textContent = original;
-          }, 1200);
+          await copyToClipboard(value);
+          setTemporaryButtonText(button, 'Copied', 'Copy address');
         } catch (error) {
-          button.textContent = 'Copy failed';
-          setTimeout(() => {
-            button.textContent = 'Copy address';
-          }, 1200);
+          setTemporaryButtonText(button, 'Copy failed', 'Copy address');
         }
       });
     });
