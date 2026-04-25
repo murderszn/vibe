@@ -1276,6 +1276,16 @@
       margin-top: 0;
     }
 
+    .notice-callout {
+      margin: 18px 0 24px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-strong);
+      background: rgba(255,255,255,0.92);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+
     .image-panel img {
       width: 100%;
       display: block;
@@ -1770,6 +1780,22 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           Overview
         </a>
+        <a href="#thesis" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M3 12h18"/></svg>
+          Thesis
+        </a>
+        <a href="#who-for" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M2 21c0-3 3-5 7-5"/><path d="M12 21c0-3 2-5 5-5"/></svg>
+          Who This Is For
+        </a>
+        <a href="#learning-model" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>
+          Learning Model
+        </a>
+        <a href="#compliance" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V7l-8-4-8 4v5c0 6 8 10 8 10Z"/></svg>
+          Compliance
+        </a>
         <a href="#how-it-works" class="nav-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           System Architecture
@@ -1801,6 +1827,26 @@
         <a href="#features" class="nav-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           Governance & Safety
+        </a>
+        <a href="#deep-dives" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+          White Paper Extensions
+        </a>
+        <a href="privacy-records.html" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>
+          Data &amp; Records
+        </a>
+        <a href="success-metrics.html" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-7"/></svg>
+          Success Metrics
+        </a>
+        <a href="example-week.html" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+          Example Week
+        </a>
+        <a href="tutor-boundaries.html" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V7l-8-4-8 4v5c0 6 8 10 8 10Z"/><path d="M12 8v4"/></svg>
+          Tutor Boundaries
         </a>
         <a href="#support" class="nav-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>
@@ -1846,6 +1892,69 @@
           <img src="images/modern_homeschool_flow.png" alt="Homeschool Flow Diagram" class="hero-image" />
         </div>
 
+      </section>
+
+      <section id="thesis" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Thesis: A Supervised Learning Operating System</h2>
+          <p class="section-subtitle">OpenTutor proposes that the future education platform is not a single app. It is a supervised learning operating system where curriculum, collaboration, tutoring, assessment, and student portfolios are connected through open, auditable tools.</p>
+        </div>
+        <div class="context-grid">
+          <div class="context-card">
+            <h3>White paper framing</h3>
+            <p>This document is not only a setup guide. It is a proposed operating model for AI-assisted, parent-supervised education, published in an open-source form that families and educators can inspect, adapt, and improve.</p>
+          </div>
+          <div class="context-card">
+            <h3>System responsibilities</h3>
+            <p>GitHub is the durable learning record. Discord is the classroom interface. Vibe/Claude is the supervised AI tutor. Parents and teachers remain accountable operators over policy, scope, and final review.</p>
+          </div>
+        </div>
+        <div class="system-map-panel">
+          <img src="images/thesis-system-diagram.svg" alt="Parent and teacher to GitHub curriculum repository to Discord classroom to Vibe AI tutor to student portfolio review loop." />
+          <div class="system-map-caption">Parent / Teacher → GitHub Curriculum Repo → Discord Classroom → Vibe AI Tutor → Student Portfolio / Review Loop.</div>
+        </div>
+      </section>
+
+      <section id="who-for" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Who This Is For</h2>
+          <p class="section-subtitle">OpenTutor is intentionally positioned for parent-led and educator-led environments that value visible, reviewable learning workflows.</p>
+        </div>
+        <div class="context-grid">
+          <div class="context-card"><h3>Primary audience</h3><p>Parent-led homeschool families and families who want visible, reviewable, AI-assisted learning workflows.</p></div>
+          <div class="context-card"><h3>Secondary audience</h3><p>Microschools, learning pods, tutors, and alternative education programs that need practical tooling without opaque platforms.</p></div>
+          <div class="context-card"><h3>Future audience</h3><p>Schools experimenting with AI-supervised, project-based, portfolio-driven learning.</p></div>
+        </div>
+        <div class="notice-callout"><strong>Scope note:</strong> OpenTutor v1.0 is best understood as an experimental operating model, not a turnkey accredited school or compliance platform.</div>
+        <div class="system-map-panel"><img src="images/audience-tiers.svg" alt="Three column visual showing family homeschool, learning pod, and future school pilot audiences." /></div>
+      </section>
+
+      <section id="learning-model" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Learning Model</h2>
+          <p class="section-subtitle">The educational philosophy is written as operational principles so families and educators can audit how instruction is scaffolded and reviewed.</p>
+        </div>
+        <div class="context-grid">
+          <div class="context-card"><h3>1) Durable artifacts</h3><p>Learning should produce durable artifacts. Students should finish with files, repos, drafts, and reflections that can be reviewed months later.</p></div>
+          <div class="context-card"><h3>2) Revision history matters</h3><p>Revision history is part of learning. Change logs and commits show growth, not just final correctness, and help adults identify where support was needed.</p></div>
+          <div class="context-card"><h3>3) AI scaffolds instruction</h3><p>AI should scaffold, not replace, instruction. Tutor support should unblock students while preserving authorship and comprehension.</p></div>
+          <div class="context-card"><h3>4) Human accountability</h3><p>Parents and teachers remain accountable operators for goals, standards, assessment, and boundary setting.</p></div>
+          <div class="context-card"><h3>5) Collaboration literacy</h3><p>Students should learn modern collaboration habits alongside academics: asking clear questions, revising in public process, and documenting decisions.</p></div>
+        </div>
+        <div class="system-map-panel"><img src="images/learning-loop.svg" alt="Learning loop from assignment to attempt to AI scaffolding to revision to parent review to portfolio artifact." /></div>
+      </section>
+
+      <section id="compliance" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Age Suitability &amp; Platform Compliance</h2>
+          <p class="section-subtitle">OpenTutor v1.0 assumes students meet minimum age requirements of third-party services in the stack and that adults actively manage compliance decisions.</p>
+        </div>
+        <div class="notice-callout"><strong>Important:</strong> For children under 13, do not assume Discord or GitHub student accounts are appropriate. Use parent-operated or child-compliant alternatives.</div>
+        <div class="context-grid">
+          <div class="context-card"><p>Discord and GitHub generally require users to be at least 13. For younger learners, families can use parent-owned accounts, parent-operated repositories, local Git workflows, private repositories, or alternative classroom tools designed for younger ages.</p></div>
+          <div class="context-card"><p>This content is not legal advice. Families and schools are responsible for evaluating applicable laws, platform terms, and local requirements before deployment.</p></div>
+        </div>
+        <div class="system-map-panel"><img src="images/compliance-checkpoint.svg" alt="Compliance checkpoint flow: age, consent, privacy, platform terms, parent oversight." /></div>
       </section>
 
       <!-- HOW IT WORKS -->
@@ -2378,6 +2487,19 @@ teachers/sites/mind-map/</div>
         </div>
       </section>
 
+      <section id="deep-dives" class="section">
+        <div class="section-header">
+          <h2 class="section-title">White Paper Extensions</h2>
+          <p class="section-subtitle">These deep dives expand the proposed model with implementation details and governance frameworks.</p>
+        </div>
+        <div class="context-grid">
+          <div class="context-card"><h3>Data, Privacy &amp; Records</h3><p>Operational defaults for student privacy, records visibility, and parent-governed deletion processes.</p><a class="repo-link" href="privacy-records.html">Read the privacy and records model</a></div>
+          <div class="context-card"><h3>Measuring Learning Outcomes</h3><p>A proposed metrics framework for student progress, tutor quality, and parent confidence.</p><a class="repo-link" href="success-metrics.html">View proposed success metrics</a></div>
+          <div class="context-card"><h3>See a Complete Example Week</h3><p>A concrete Grade 7 STEM walkthrough including artifacts, timeline, and classroom interactions.</p><a class="repo-link" href="example-week.html">Open the example week</a></div>
+          <div class="context-card"><h3>Human-Governed AI Tutoring</h3><p>Clear tutor boundaries for what Vibe should do, what needs human review, and what is not allowed.</p><a class="repo-link" href="tutor-boundaries.html">Read the tutor boundaries</a></div>
+        </div>
+      </section>
+
       <section id="support" class="section">
         <div class="section-header">
           <h2 class="section-title">Support the Project</h2>
@@ -2415,6 +2537,8 @@ teachers/sites/mind-map/</div>
         <div class="site-footer-links">
           <a class="repo-link" href="https://github.com/murderszn/vibe" target="_blank" rel="noreferrer">GitHub</a>
           <a class="repo-link" href="#setup-guides">Setup Guides</a>
+          <a class="repo-link" href="#deep-dives">White Paper Extensions</a>
+          <a class="repo-link" href="privacy-records.html">Data & Privacy</a>
           <a class="repo-link" href="#support">Support</a>
         </div>
       </footer>
@@ -2424,7 +2548,8 @@ teachers/sites/mind-map/</div>
   </div>
 
   <script>
-    const sectionLinks = Array.from(document.querySelectorAll('.nav-link'));
+    const sectionLinks = Array.from(document.querySelectorAll('.nav-link'))
+      .filter((link) => (link.getAttribute('href') || '').startsWith('#'));
     const sections = sectionLinks
       .map((link) => document.querySelector(link.getAttribute('href')))
       .filter(Boolean);

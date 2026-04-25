@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 280'>
+<style>.col{fill:#fff;stroke:#cbd5e1;stroke-width:2;rx:16}.t{font:700 24px Inter,Arial;sans-serif;fill:#0f172a}.s{font:500 16px Inter,Arial;sans-serif;fill:#334155}</style>
+<rect class='col' x='20' y='30' width='300' height='220'/><text class='t' x='170' y='75' text-anchor='middle'>Family Homeschool</text><text class='s' x='50' y='120'>• Parent-led homes</text><text class='s' x='50' y='150'>• Reviewable workflow</text><text class='s' x='50' y='180'>• AI-assisted support</text>
+<rect class='col' x='350' y='30' width='300' height='220'/><text class='t' x='500' y='75' text-anchor='middle'>Learning Pod</text><text class='s' x='380' y='120'>• Microschools</text><text class='s' x='380' y='150'>• Tutors and pod leads</text><text class='s' x='380' y='180'>• Alternative programs</text>
+<rect class='col' x='680' y='30' width='300' height='220'/><text class='t' x='830' y='75' text-anchor='middle'>Future School Pilot</text><text class='s' x='710' y='120'>• AI-supervised pilots</text><text class='s' x='710' y='150'>• Portfolio-driven learning</text><text class='s' x='710' y='180'>• Project-based models</text>
+</svg>

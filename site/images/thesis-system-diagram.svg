@@ -1,0 +1,15 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 260'>
+  <style>
+    .box{fill:#fff;stroke:#cbd5e1;stroke-width:2;rx:14}.txt{font:600 20px Inter,Arial,sans-serif;fill:#0f172a}.sub{font:400 15px Inter,Arial,sans-serif;fill:#64748b}.arrow{stroke:#64748b;stroke-width:3;marker-end:url(#m)}
+  </style>
+  <defs><marker id='m' markerWidth='10' markerHeight='10' refX='9' refY='3' orient='auto'><path d='M0,0 L10,3 L0,6 z' fill='#64748b'/></marker></defs>
+  <rect class='box' x='20' y='70' width='200' height='110'/><text class='txt' x='120' y='118' text-anchor='middle'>Parent / Teacher</text><text class='sub' x='120' y='145' text-anchor='middle'>Accountable operator</text>
+  <line class='arrow' x1='220' y1='125' x2='280' y2='125'/>
+  <rect class='box' x='280' y='70' width='220' height='110'/><text class='txt' x='390' y='118' text-anchor='middle'>GitHub Curriculum</text><text class='sub' x='390' y='145' text-anchor='middle'>Durable learning record</text>
+  <line class='arrow' x1='500' y1='125' x2='560' y2='125'/>
+  <rect class='box' x='560' y='70' width='200' height='110'/><text class='txt' x='660' y='118' text-anchor='middle'>Discord Classroom</text><text class='sub' x='660' y='145' text-anchor='middle'>Daily interface</text>
+  <line class='arrow' x1='760' y1='125' x2='820' y2='125'/>
+  <rect class='box' x='820' y='70' width='180' height='110'/><text class='txt' x='910' y='118' text-anchor='middle'>Vibe AI Tutor</text><text class='sub' x='910' y='145' text-anchor='middle'>Supervised scaffold</text>
+  <line class='arrow' x1='1000' y1='125' x2='1060' y2='125'/>
+  <rect class='box' x='1060' y='70' width='130' height='110'/><text class='txt' x='1125' y='118' text-anchor='middle'>Portfolio</text><text class='sub' x='1125' y='145' text-anchor='middle'>Review loop</text>
+</svg>
