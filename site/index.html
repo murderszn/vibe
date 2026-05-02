@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OpenTutor v1.0 | AI Homeschooling with GitHub, Discord &amp; Claude</title>
-  <meta name="description" content="OpenTutor is a parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a Claude-backed tutor named Vibe." />
+  <title>OpenTutor + Vibe | Modular AI Homeschooling with GitHub, Discord &amp; Claude</title>
+  <meta name="description" content="OpenTutor is a parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a modular Claude-backed assistant named Vibe." />
   <meta name="author" content="@murderszn" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#f8fafc" />
@@ -16,8 +16,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="OpenTutor" />
-  <meta property="og:title" content="OpenTutor v1.0 | AI Homeschooling with GitHub, Discord &amp; Claude" />
-  <meta property="og:description" content="A parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a Claude-backed tutor named Vibe." />
+  <meta property="og:title" content="OpenTutor + Vibe | Modular AI Homeschooling with GitHub, Discord &amp; Claude" />
+  <meta property="og:description" content="A parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a modular Claude-backed assistant named Vibe." />
   <meta property="og:url" content="https://murderszn.github.io/vibe/site/" />
   <meta property="og:image" content="https://murderszn.github.io/vibe/site/images/modern_homeschool_flow.png" />
   <meta property="og:image:width" content="1024" />
@@ -28,8 +28,8 @@
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="OpenTutor v1.0 | AI Homeschooling with GitHub, Discord &amp; Claude" />
-  <meta name="twitter:description" content="A parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a Claude-backed tutor named Vibe." />
+  <meta name="twitter:title" content="OpenTutor + Vibe | Modular AI Homeschooling with GitHub, Discord &amp; Claude" />
+  <meta name="twitter:description" content="A parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a modular Claude-backed assistant named Vibe." />
   <meta name="twitter:image" content="https://murderszn.github.io/vibe/site/images/modern_homeschool_flow.png" />
   <meta name="twitter:image:alt" content="OpenTutor homeschool flow diagram connecting GitHub, Discord, Vibe, and parent oversight." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,8 +44,8 @@
           "@type": "WebPage",
           "@id": "https://murderszn.github.io/vibe/site/#webpage",
           "url": "https://murderszn.github.io/vibe/site/",
-          "name": "OpenTutor v1.0 | AI Homeschooling with GitHub, Discord & Claude",
-          "description": "OpenTutor is a parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a Claude-backed tutor named Vibe.",
+          "name": "OpenTutor + Vibe | Modular AI Homeschooling with GitHub, Discord & Claude",
+          "description": "OpenTutor is a parent-supervised AI homeschool model using GitHub for records, Discord for classroom flow, and a modular Claude-backed assistant named Vibe.",
           "inLanguage": "en-US",
           "isPartOf": {
             "@id": "https://murderszn.github.io/vibe/site/#website"
@@ -82,9 +82,9 @@
         },
         {
           "@type": "SoftwareSourceCode",
-          "@id": "https://github.com/murderszn/open-tutor#source",
-          "name": "OpenTutor",
-          "codeRepository": "https://github.com/murderszn/open-tutor",
+          "@id": "https://github.com/murderszn/vibe#source",
+          "name": "Vibe Discord Bot",
+          "codeRepository": "https://github.com/murderszn/vibe",
           "programmingLanguage": "Python",
           "applicationCategory": "EducationalApplication",
           "description": "Open-source homeschool infrastructure for AI-assisted, parent-supervised learning workflows."
@@ -103,7 +103,7 @@
       --border: #e2e8f0;
       --border-strong: #cbd5e1;
       
-      /* Accents drawn from the isometric render (soft slates/blues) */
+      /* Academic neutral theme */
       --accent: #cbd5e1;
       --primary: #475569;
       --primary-hover: #334155;
@@ -537,6 +537,291 @@
       filter: contrast(1.05) brightness(1.02);
     }
 
+    .release-panel {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .release-card,
+    .runtime-panel {
+      border: 1px solid rgba(203,213,225,0.92);
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.92) 100%);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .release-card {
+      padding: 24px;
+    }
+
+    .release-card h2,
+    .runtime-panel h3 {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 1.08rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .release-card p,
+    .runtime-panel p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .release-kicker,
+    .runtime-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .release-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .release-badge,
+    .runtime-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 30px;
+      padding: 6px 9px;
+      border-radius: 6px;
+      border: 1px solid rgba(203,213,225,0.95);
+      background: rgba(255,255,255,0.84);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .runtime-panel {
+      padding: 20px;
+      display: grid;
+      align-content: space-between;
+      gap: 16px;
+    }
+
+    .runtime-command {
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .runtime-command strong {
+      color: #f8fafc;
+      font-weight: 700;
+    }
+
+    .runtime-clean {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .runtime-summary-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.88) 100%);
+      box-shadow: var(--shadow-sm);
+      padding: 28px;
+    }
+
+    .runtime-summary-card h3,
+    .runtime-example-heading h3 {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 750;
+      letter-spacing: -0.01em;
+    }
+
+    .runtime-summary-card p,
+    .runtime-example-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .runtime-feature-list,
+    .runtime-steps {
+      list-style: none;
+      margin: 22px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0;
+    }
+
+    .runtime-feature-list li {
+      display: grid;
+      grid-template-columns: minmax(130px, 0.35fr) 1fr;
+      gap: 14px;
+      padding: 13px 0;
+      border-top: 1px solid rgba(226,232,240,0.9);
+    }
+
+    .runtime-feature-list li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .runtime-feature-list strong,
+    .runtime-steps strong {
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    .runtime-feature-list span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .runtime-steps {
+      gap: 17px;
+    }
+
+    .runtime-steps li {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .runtime-steps li > span {
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(248,250,252,0.95);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      font-weight: 800;
+      font-size: 0.86rem;
+    }
+
+    .runtime-steps p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .runtime-examples {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: minmax(170px, 0.32fr) 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .runtime-prompt-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .runtime-prompt-list code {
+      display: block;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(226,232,240,0.9);
+      color: var(--primary);
+      background: transparent;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .runtime-prompt-list code:first-child {
+      padding-top: 0;
+    }
+
+    .runtime-prompt-list code:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .section-anchor {
+      display: block;
+      height: 0;
+      overflow: hidden;
+      scroll-margin-top: 32px;
+    }
+
+    .runtime-tutor-block {
+      margin-top: 52px;
+    }
+
+    .runtime-subheader {
+      max-width: 980px;
+      margin-bottom: 24px;
+    }
+
+    .runtime-subheader h3 {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 1.45rem;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+    }
+
+    .runtime-subheader p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .runtime-strengths {
+      margin-top: 28px;
+    }
+
+    @media (max-width: 1100px) {
+      .release-panel,
+      .runtime-clean {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .release-panel,
+      .runtime-clean,
+      .runtime-examples {
+        grid-template-columns: 1fr;
+      }
+
+      .runtime-feature-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+
     .wallet-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -594,8 +879,8 @@
     }
 
     .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--muted);
+      font-size: 1rem;
+      color: var(--text);
       width: 100%;
       max-width: none;
       line-height: 1.6;
@@ -605,7 +890,7 @@
 
     .section-subtitle-detail {
       margin-top: 12px;
-      color: var(--text);
+      color: var(--muted);
     }
 
     .section-note {
@@ -1061,8 +1346,8 @@
       height: 34px;
       margin-bottom: 14px;
       border-radius: 4px;
-      border: 1px solid rgba(99,102,241,0.16);
-      background: rgba(99,102,241,0.08);
+      border: 1px solid var(--border);
+      background: rgba(248,250,252,0.92);
       color: var(--primary);
       font-size: 0.82rem;
       font-weight: 700;
@@ -1202,8 +1487,8 @@
       align-items: center;
       justify-content: center;
       border-radius: 4px;
-      background: rgba(99,102,241,0.1);
-      border: 1px solid rgba(99,102,241,0.16);
+      background: rgba(248,250,252,0.92);
+      border: 1px solid var(--border);
       color: var(--primary);
       font-size: 0.8rem;
       font-weight: 700;
@@ -1625,8 +1910,8 @@
       color: var(--primary);
       font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      letter-spacing: 0;
+      text-transform: none;
     }
 
     .timeline-board {
@@ -2162,7 +2447,7 @@
       </div>
 
       <div class="sidebar-intro">
-        <p>OpenTutor is a parent-operated homeschool system built from connected tools. Vibe is the tutor inside that system.</p>
+        <p>OpenTutor is a parent-operated homeschool system built from connected tools. Vibe is the modular tutor, repo guide, live web helper, and family assistant inside that system.</p>
       </div>
 
       <nav class="sidebar-nav">
@@ -2183,10 +2468,6 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/><path d="M16 3h5v5"/><path d="M21 3l-9 9"/><path d="M7 13h3"/><path d="M7 17h7"/></svg>
           Design Rationale
         </a>
-        <a href="#repos" class="nav-link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
-          Repository Map
-        </a>
         <a href="#learning-resources" class="nav-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v12"/><path d="M6 12h12"/><circle cx="12" cy="12" r="9"/></svg>
           Learning Resources
@@ -2195,9 +2476,9 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5Z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>
           Setup Guides
         </a>
-        <a href="#tutor" class="nav-link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
-          Tutor Layer
+        <a href="#vibe-runtime" class="nav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m9 10 2 2 4-4"/></svg>
+          Vibe + Tutor
         </a>
         <a href="#routine" class="nav-link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>
@@ -2221,8 +2502,8 @@
             <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="dropdown-content">
-            <a href="https://github.com/murderszn/open-tutor" target="_blank">OpenTutor Repo</a>
-            <a href="https://github.com/murderszn/vibe" target="_blank">Vibe Repo</a>
+            <a href="https://github.com/murderszn/vibe" target="_blank">Vibe Bot Repo</a>
+            <a href="https://github.com/Johnson-Family-Dynasty/learning-center" target="_blank">Learning Center Repo</a>
           </div>
         </details>
       </div>
@@ -2234,23 +2515,23 @@
       
       <!-- HERO -->
       <section id="overview" class="hero-section">
-        <h1 class="hero-title">OpenTutor v1.0: an open model for homeschooling through GitHub, Discord, and a Claude-backed tutor.</h1>
-        <p class="hero-subtitle">OpenTutor v1.0 is the platform. Vibe is the tutor. This page is structured as a design white paper for a parent-operated homeschool system where curriculum lives in repositories, daily instruction lives in Discord, and AI support stays visible, supervised, and accountable.</p>
+        <h1 class="hero-title">OpenTutor + Vibe: a modular AI homeschool assistant for GitHub, Discord, live web, and family productivity.</h1>
+        <p class="hero-subtitle">OpenTutor is the platform. Vibe is the classroom assistant. The current runtime combines a Claude-backed tutor with allowlisted Markdown skills, GitHub access, live web and weather tools, student schedule lookup, and a family profile that keeps support personal without hiding how it works.</p>
         <div class="hero-meta">
-          <span>v1.0 — Published April 2026</span>
+          <span>Runtime update — May 2026</span>
           <span>By <a href="https://github.com/murderszn" target="_blank" rel="noreferrer">@murderszn</a></span>
         </div>
 
         <div class="share-actions" aria-label="Share OpenTutor">
-          <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmurderszn.github.io%2Fvibe%2Fsite%2F&amp;text=OpenTutor%20v1.0%20%7C%20AI%20Homeschooling%20with%20GitHub%2C%20Discord%20%26%20Claude" target="_blank" rel="noreferrer" aria-label="Share on Twitter" title="Twitter" data-share-twitter>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmurderszn.github.io%2Fvibe%2Fsite%2F&amp;text=OpenTutor%20%2B%20Vibe%20%7C%20Modular%20AI%20Homeschooling%20with%20GitHub%2C%20Discord%20%26%20Claude" target="_blank" rel="noreferrer" aria-label="Share on Twitter" title="Twitter" data-share-twitter>
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.55l-5.13-6.71L5.2 22H1.94l7.61-8.7L1.5 2h6.71l4.64 6.14L18.244 2Zm-1.14 17.9h1.8L7.23 3.99H5.29L17.104 19.9Z"/></svg>
             <span class="share-label">Twitter</span>
           </a>
-          <a class="share-btn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fmurderszn.github.io%2Fvibe%2Fsite%2F&amp;title=OpenTutor%20v1.0%20%7C%20AI%20Homeschooling%20with%20GitHub%2C%20Discord%20%26%20Claude" target="_blank" rel="noreferrer" aria-label="Share on Reddit" title="Reddit" data-share-reddit>
+          <a class="share-btn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fmurderszn.github.io%2Fvibe%2Fsite%2F&amp;title=OpenTutor%20%2B%20Vibe%20%7C%20Modular%20AI%20Homeschooling%20with%20GitHub%2C%20Discord%20%26%20Claude" target="_blank" rel="noreferrer" aria-label="Share on Reddit" title="Reddit" data-share-reddit>
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.14a2.35 2.35 0 0 0-3.98-1.69c-1.45-1-3.41-1.64-5.59-1.75l.95-4.48 3.1.66a1.7 1.7 0 1 0 .27-1.25l-3.72-.79a.63.63 0 0 0-.74.49l-1.13 5.35c-2.24.08-4.27.73-5.76 1.75a2.35 2.35 0 1 0-2.59 3.83 4.64 4.64 0 0 0-.07.8c0 3.52 4.15 6.38 9.26 6.38s9.26-2.86 9.26-6.38c0-.26-.02-.52-.07-.77A2.35 2.35 0 0 0 22 12.14ZM6.68 14.24a1.42 1.42 0 1 1 2.84 0 1.42 1.42 0 0 1-2.84 0Zm8.62 3.7c-.94.94-2.73 1.01-3.3 1.01s-2.36-.07-3.3-1.01a.58.58 0 0 1 .82-.82c.59.59 1.84.67 2.48.67s1.89-.08 2.48-.67a.58.58 0 0 1 .82.82Zm-.4-2.28a1.42 1.42 0 1 1 0-2.84 1.42 1.42 0 0 1 0 2.84Z"/></svg>
             <span class="share-label">Reddit</span>
           </a>
-          <a class="share-btn" href="mailto:?subject=OpenTutor%20v1.0%20%7C%20AI%20Homeschooling%20with%20GitHub%2C%20Discord%20%26%20Claude&amp;body=https%3A%2F%2Fmurderszn.github.io%2Fvibe%2Fsite%2F" aria-label="Share by email" title="Email" data-share-email>
+          <a class="share-btn" href="mailto:?subject=OpenTutor%20%2B%20Vibe%20%7C%20Modular%20AI%20Homeschooling%20with%20GitHub%2C%20Discord%20%26%20Claude&amp;body=https%3A%2F%2Fmurderszn.github.io%2Fvibe%2Fsite%2F" aria-label="Share by email" title="Email" data-share-email>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
             <span class="share-label">Email</span>
           </a>
@@ -2262,6 +2543,30 @@
 
         <div class="hero-image-wrapper">
           <img src="images/modern_homeschool_flow.png" alt="OpenTutor homeschool flow diagram connecting GitHub, Discord, Vibe, and parent oversight" class="hero-image" width="1024" height="1024" decoding="async" fetchpriority="high" />
+        </div>
+
+        <div class="release-panel">
+          <article class="release-card">
+            <div class="release-kicker">Current Runtime</div>
+            <h2>Vibe now works from skills, tools, and family-aware context.</h2>
+            <p>The bot has been refactored so the Discord loop stays small, behavior lives in editable Markdown skills, tool schemas stay explicit, and Python modules handle live web, weather, GitHub, and classroom schedule lookups.</p>
+            <div class="release-badges" aria-label="Vibe runtime capabilities">
+              <span class="release-badge">Schedule CSV lookup</span>
+              <span class="release-badge">Markdown skills</span>
+              <span class="release-badge">GitHub repo access</span>
+              <span class="release-badge">Live weather</span>
+              <span class="release-badge">Web search + URL reading</span>
+            </div>
+          </article>
+
+          <article class="runtime-panel">
+            <div>
+              <div class="runtime-kicker">Example Prompt</div>
+              <h3>One classroom question, one targeted tool call.</h3>
+              <p>Vibe can resolve a student alias and use the schedule skill before hunting through the repo.</p>
+            </div>
+            <div class="runtime-command"><strong>@Vibe</strong> tell us what the schedule says two students should do for schoolwork on Monday</div>
+          </article>
         </div>
 
       </section>
@@ -2329,7 +2634,7 @@
             <p>Schools piloting supervised AI, project-based assessment, and portfolio-driven documentation before larger institutional adoption.</p>
           </article>
         </div>
-        <p class="section-note">OpenTutor v1.0 is best treated as an experimental operating model, not a turnkey accredited school package or compliance platform.</p>
+        <p class="section-note">OpenTutor is best treated as an experimental operating model, not a turnkey accredited school package or compliance platform.</p>
       </section>
 
       <!-- HOW IT WORKS -->
@@ -2420,7 +2725,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V7l-8-4-8 4v5c0 6 8 10 8 10Z"/><path d="M9 12l2 2 4-4"/></svg>
             </div>
             <h3>Parents stay in the loop</h3>
-            <p>Claude-backed tutoring is useful because it is immediate, but the system still keeps the parent in control. Roles, channels, moderation tools, and logs make the adult the operator of the environment rather than handing that control to a black box.</p>
+            <p>Claude-backed tutoring is useful because it is immediate, but the system still keeps the parent in control. Roles, channels, visible prompt files, and reviewable tool code make the adult the operator of the environment rather than handing that control to a black box.</p>
           </div>
 
           <div class="context-card">
@@ -2449,18 +2754,19 @@
         </div>
       </section>
 
-      <section id="repos" class="section">
+      <section id="learning-resources" class="section">
+        <span id="repos" class="section-anchor" aria-hidden="true"></span>
         <div class="section-header">
-          <h2 class="section-title">Repository Map</h2>
-          <p class="section-subtitle">The OpenTutor repo already shows what the homeschool side can look like in practice: assignments, resources, student folders, teacher dashboards, and AI prompt files all live in a visible structure that families can edit directly.</p>
+          <h2 class="section-title">Learning Resources</h2>
+          <p class="section-subtitle">Learning resources and repository structure belong together. The repo holds assignments, student workspaces, teacher tools, reference documents, datasets, and useful links so students have one supervised place to read, watch, review, and build from.</p>
         </div>
 
         <div class="repo-steps">
           <div class="repo-step">
-            <div class="repo-step-kicker">OpenTutor Example</div>
+            <div class="repo-step-kicker">Learning Center Example</div>
             <h3>The repo is split by function</h3>
-            <p>The live <code>open-tutor</code> structure separates shared materials, student workspaces, and teacher tools so the system stays readable as it grows.</p>
-            <div class="repo-flow-code">open-tutor/
+            <p>The live <code>learning-center</code> structure separates shared materials, student workspaces, teacher tools, and dashboards so the system stays readable as it grows.</p>
+            <div class="repo-flow-code">learning-center/
   assignments/
   resources/
   students/
@@ -2492,19 +2798,11 @@ teachers/sites/mind-map/</div>
   schedule.csv
   README.md</div>
           </div>
-
         </div>
 
         <div class="system-map-panel">
           <img src="images/opentutor-repo-map.png" alt="Technical repository workflow map showing student folders, subjects, assignments, and project outputs connected together" width="1536" height="1024" loading="lazy" decoding="async" />
           <div class="system-map-caption">The diagram matches the live OpenTutor pattern: shared assignments and resources feed student workspaces, while teacher dashboards and prompts keep planning visible and editable.</div>
-        </div>
-      </section>
-
-      <section id="learning-resources" class="section">
-        <div class="section-header">
-          <h2 class="section-title">Learning Resources</h2>
-          <p class="section-subtitle">This section is a shared resource-folder model, not a curriculum chart. It shows how parents can organize educational materials, reference documents, datasets, and useful links so students have one supervised place to read, watch, review, and build from.</p>
         </div>
 
         <div class="knowledge-radar">
@@ -2632,13 +2930,60 @@ teachers/sites/mind-map/</div>
 
       </section>
 
-      <section id="tutor" class="section">
+      <section id="vibe-runtime" class="section">
+        <span id="tutor" class="section-anchor" aria-hidden="true"></span>
         <div class="section-header">
-          <h2 class="section-title">Tutor Layer</h2>
-          <p class="section-subtitle">Vibe is the friendly tutor persona inside OpenTutor. Its behavior is not marketing copy; it is defined directly in the Python bot code and designed for concise, encouraging, middle-school support inside Discord.</p>
+          <h2 class="section-title">Vibe: Tutor + Family Helper</h2>
+          <p class="section-subtitle">Vibe is the classroom tutor and family helper inside OpenTutor. The runtime gives that personality a few trusted abilities: schedule lookup, GitHub reading, live web access, weather, and practical planning support.</p>
+          <p class="section-subtitle section-subtitle-detail">The technical pieces are separated behind the scenes, but the experience stays simple: ask in Discord, Vibe chooses the right skill, checks the right source, and answers with a useful next step.</p>
         </div>
 
-        <div class="image-panel-grid">
+        <div class="runtime-clean">
+          <article class="runtime-summary-card">
+            <span class="runtime-kicker">What Vibe does</span>
+            <h3>One assistant for learning and daily flow</h3>
+            <p>Vibe helps students get unstuck, helps parents steer the day, and checks the right source before answering questions that depend on schedules, repo files, or current information.</p>
+            <ul class="runtime-feature-list">
+              <li><strong>Classroom help</strong><span>Age-aware support for each student in the classroom.</span></li>
+              <li><strong>Schedule lookup</strong><span>Finds the right student work before giving an answer.</span></li>
+              <li><strong>GitHub answers</strong><span>Reads the learning center repo when the question is about assignments, docs, or code.</span></li>
+              <li><strong>Live information</strong><span>Uses web search, pasted URLs, and weather when current facts matter.</span></li>
+            </ul>
+          </article>
+
+          <aside class="runtime-summary-card">
+            <span class="runtime-kicker">How it works</span>
+            <h3>A simple path from question to answer</h3>
+            <ol class="runtime-steps">
+              <li><span>1</span><p><strong>You ask Vibe in Discord.</strong> It checks who is asking, who was mentioned, and what kind of help is needed.</p></li>
+              <li><span>2</span><p><strong>Vibe checks the right source.</strong> It may read a schedule, GitHub file, website, or weather result.</p></li>
+              <li><span>3</span><p><strong>Vibe answers plainly.</strong> It keeps the reply short and includes links or file paths when useful.</p></li>
+            </ol>
+          </aside>
+        </div>
+
+        <div class="runtime-examples">
+          <div class="runtime-example-heading">
+            <span class="runtime-kicker">Try asking</span>
+            <h3>Useful family prompts</h3>
+            <p>These are the everyday jobs this runtime is designed to handle without making the family think about files, APIs, or tool names.</p>
+          </div>
+          <div class="runtime-prompt-list">
+            <code>@Vibe what should the students do on Monday?</code>
+            <code>@Vibe summarize the math folder in the learning center repo.</code>
+            <code>@Vibe what's the weather in Chicago today?</code>
+            <code>@Vibe help us turn today's errands and schoolwork into a quick plan.</code>
+          </div>
+        </div>
+
+        <div class="runtime-tutor-block">
+          <div class="runtime-subheader">
+            <span class="runtime-kicker">Tutor behavior</span>
+            <h3>Friendly help that fits the classroom</h3>
+            <p>Vibe is not just a tool router. It also carries the tutor style, student awareness, recent context, and guardrails that make the assistant useful in a homeschool Discord instead of feeling like a generic chat window.</p>
+          </div>
+
+          <div class="image-panel-grid">
           <div class="image-panel">
             <img src="images/vibe-tutor-classroom.png" alt="Illustration of Vibe tutoring inside a calm digital classroom" width="1536" height="1024" loading="lazy" decoding="async" />
             <div class="image-panel-copy">
@@ -2654,54 +2999,31 @@ teachers/sites/mind-map/</div>
               <p>Recent context, speaker awareness, concise replies, and guardrails turn tutoring into a practical classroom layer instead of a generic chat window.</p>
             </div>
           </div>
-        </div>
-
-        <div class="strengths-grid" style="margin-top: 32px;">
-          <div class="strength-card">
-            <div class="strength-card-copy">
-              <span class="strength-kicker">Teaching Style</span>
-              <h3>Clear middle-school explanations</h3>
-              <p>The system prompt explicitly positions Vibe as educational, encouraging, and good at making complex middle-school topics easy to understand without overexplaining.</p>
-            </div>
           </div>
 
-          <div class="strength-card">
-            <div class="strength-card-copy">
-              <span class="strength-kicker">Context Memory</span>
-              <h3>Remembers the recent thread</h3>
-              <p>It keeps up to 10 recent message pairs per channel, which means follow-up questions can build on what a student already asked instead of restarting every time.</p>
+          <div class="strengths-grid runtime-strengths">
+            <div class="strength-card">
+              <div class="strength-card-copy">
+                <span class="strength-kicker">Teaching Style</span>
+                <h3>Clear explanations</h3>
+                <p>Vibe explains schoolwork in plain language, adapts to the student, and keeps answers useful without taking over the learning.</p>
+              </div>
             </div>
-          </div>
 
-          <div class="strength-card">
-            <div class="strength-card-copy">
-              <span class="strength-kicker">Student Awareness</span>
-              <h3>Knows who is speaking</h3>
-              <p>User display names, roles, and mention targets are injected into the model context, so Vibe can interpret classroom conversations with much better situational awareness.</p>
+            <div class="strength-card">
+              <div class="strength-card-copy">
+                <span class="strength-kicker">Context Awareness</span>
+                <h3>Knows the classroom</h3>
+                <p>Display names, roles, aliases, and recent messages help Vibe distinguish students, parents, and teacher roles in a live Discord thread.</p>
+              </div>
             </div>
-          </div>
 
-          <div class="strength-card">
-            <div class="strength-card-copy">
-              <span class="strength-kicker">Access Pattern</span>
-              <h3>Simple to use in real time</h3>
-              <p>Students only need to @mention Vibe in a subject channel. That keeps tutoring lightweight and makes it easy to ask for help the moment confusion happens.</p>
-            </div>
-          </div>
-
-          <div class="strength-card">
-            <div class="strength-card-copy">
-              <span class="strength-kicker">Discord Native</span>
-              <h3>Handles long answers safely</h3>
-              <p>If a response gets too long for Discord, the bot automatically splits it into clean message chunks. That keeps explanations readable without breaking the conversation flow.</p>
-            </div>
-          </div>
-
-          <div class="strength-card">
-            <div class="strength-card-copy">
-              <span class="strength-kicker">Guardrails</span>
-              <h3>Parent-first oversight</h3>
-              <p>A built-in cooldown limits spam, destructive actions are restricted to the <code>Admin</code> role, and admin actions are logged to <code>#bot-logs</code> for transparent supervision.</p>
+            <div class="strength-card">
+              <div class="strength-card-copy">
+                <span class="strength-kicker">Guardrails</span>
+                <h3>Helper, not server admin</h3>
+                <p>Cooldowns, concise replies, and scoped tools keep Vibe focused on learning and productivity while parents remain the operators.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -2841,7 +3163,7 @@ teachers/sites/mind-map/</div>
       <section id="features" class="section">
         <div class="section-header">
           <h2 class="section-title">Governance &amp; Safety</h2>
-          <p class="section-subtitle">The tutor layer only makes sense in a homeschool setting when parents retain authority over permissions, logs, discipline, and classroom structure.</p>
+          <p class="section-subtitle">The tutor layer only makes sense in a homeschool setting when parents retain authority over permissions, curriculum, pacing, and classroom structure. Vibe is intentionally scoped as a learning and productivity helper, not a server operator.</p>
         </div>
 
         <div class="features-grid">
@@ -2849,24 +3171,24 @@ teachers/sites/mind-map/</div>
           <div class="feature-item">
             <svg class="feature-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             <div class="feature-content">
-              <h4>Classroom Moderation</h4>
-              <p>Parents can manage the server directly through Vibe. Kick, ban, timeout, or clean up disruptive activity with admin-gated commands instead of digging through Discord menus mid-lesson.</p>
+              <h4>No Server-Management Role</h4>
+              <p>The current runtime tells Vibe not to offer or perform moderation or server-management actions. Discord permissions and classroom structure stay under parent control.</p>
             </div>
           </div>
 
           <div class="feature-item">
             <svg class="feature-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             <div class="feature-content">
-              <h4>Full Parental Oversight</h4>
-              <p>Administrative actions are logged to <code>#bot-logs</code>, creating a clear audit trail for moderation and server changes. Parents can review how the classroom is being managed instead of relying on invisible automation.</p>
+              <h4>Visible Prompt and Skill Files</h4>
+              <p>Behavior lives in allowlisted Markdown skills and Python modules instead of a hidden product dashboard. Parents can inspect how the assistant is supposed to behave.</p>
             </div>
           </div>
 
           <div class="feature-item">
             <svg class="feature-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
             <div class="feature-content">
-              <h4>Structured Learning Spaces</h4>
-              <p>Need a new room for algebra, writing workshop, science lab, or project review? Vibe can help set up organized channels so each subject has a dedicated place for materials, questions, and discussion.</p>
+              <h4>Scoped Live Tools</h4>
+              <p>Web, weather, GitHub, and schedule access are exposed through explicit tool schemas. Vibe can fetch information, but the capabilities are reviewable in code.</p>
             </div>
           </div>
 
@@ -2874,7 +3196,7 @@ teachers/sites/mind-map/</div>
             <svg class="feature-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
             <div class="feature-content">
               <h4>Immediate, Contextual Help</h4>
-              <p>Students ask for help by tagging the bot in the exact study space they are already using. That makes tutoring feel like part of the classroom workflow instead of a separate app they have to learn.</p>
+              <p>Students ask for help by tagging Vibe in the study space they already use. Known names, roles, aliases, and channel context help the reply fit the classroom moment.</p>
             </div>
           </div>
 
@@ -2900,7 +3222,7 @@ teachers/sites/mind-map/</div>
       <section id="support" class="section">
         <div class="section-header">
           <h2 class="section-title">Support the Project</h2>
-          <p class="section-subtitle">OpenTutor is an open-source homeschool infrastructure project. GitHub stars and forks help people discover, test, and improve the project; donations can fund API costs, curriculum maintenance, documentation, and continued development.</p>
+          <p class="section-subtitle">OpenTutor and Vibe are open-source homeschool infrastructure work. GitHub stars and forks help people discover, test, and improve the project; donations can fund API costs, curriculum maintenance, documentation, and continued development.</p>
         </div>
 
         <div class="github-support-grid">
@@ -2911,11 +3233,11 @@ teachers/sites/mind-map/</div>
               </span>
               <div>
                 <span class="github-support-kicker">GitHub Star</span>
-                <h3>Star the OpenTutor repo</h3>
+                <h3>Star the Vibe repo</h3>
               </div>
             </div>
-            <p>Stars help more parents and educators find the project and signal that the model is worth continuing to build.</p>
-            <a class="github-support-link" href="https://github.com/murderszn/open-tutor" target="_blank" rel="noreferrer">
+            <p>Stars help more parents and educators find the Discord bot and signal that the model is worth continuing to build.</p>
+            <a class="github-support-link" href="https://github.com/murderszn/vibe" target="_blank" rel="noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               Star on GitHub
             </a>
@@ -2931,8 +3253,8 @@ teachers/sites/mind-map/</div>
                 <h3>Fork the project</h3>
               </div>
             </div>
-            <p>Forks make it easier to adapt the model, test curriculum changes, and send improvements back through pull requests.</p>
-            <a class="github-support-link" href="https://github.com/murderszn/open-tutor/fork" target="_blank" rel="noreferrer">
+            <p>Forks make it easier to adapt the bot, test runtime changes, add skills, and send improvements back through pull requests.</p>
+            <a class="github-support-link" href="https://github.com/murderszn/vibe/fork" target="_blank" rel="noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 9v3a6 6 0 0 0 6 6h3"/><path d="M18 15V5"/><path d="m15 8 3-3 3 3"/></svg>
               Fork on GitHub
             </a>
@@ -2968,7 +3290,7 @@ teachers/sites/mind-map/</div>
           <p>A parent-operated homeschool model built around GitHub, Discord, and a Claude-backed tutor layer, with visible systems, clear ownership, and durable student work.</p>
         </div>
         <div class="site-footer-links">
-          <a class="repo-link" href="https://github.com/murderszn/open-tutor" target="_blank" rel="noreferrer">OpenTutor GitHub</a>
+          <a class="repo-link" href="https://github.com/murderszn/vibe" target="_blank" rel="noreferrer">Vibe GitHub</a>
           <a class="repo-link" href="#setup-guides">Setup Guides</a>
           <a class="repo-link" href="#support">Support</a>
         </div>

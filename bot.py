@@ -1,105 +1,75 @@
-import discord
-import anthropic
+import asyncio
+import concurrent.futures
 import os
 import re
 import time
 from collections import defaultdict
-from dotenv import load_dotenv
 
-load_dotenv()
+import anthropic
+import discord
 
-# ──────────────────────────────────────────────
-# CONFIG
-# ──────────────────────────────────────────────
-MAX_HISTORY        = 10          # messages kept per channel
-COOLDOWN_SECONDS   = 5           # per-user rate limit
-MAX_RESPONSE_LEN   = 1900        # Discord limit is 2000; leave headroom
+from config import (
+    CLASSROOM_NAME,
+    COOLDOWN_SECONDS,
+    LEARNING_CENTER_FULL_NAME,
+    MAX_HISTORY,
+    MAX_RESPONSE_LEN,
+    MAX_TOOL_ROUNDS,
+    describe_known_classroom_member,
+    infer_user_mode,
+)
+from prompting import build_system_prompt
+from tools.github_tools import tool_github
+from tools.schedule_tools import tool_get_classroom_schedule
+from tools.schemas import TOOLS
+from tools.web_tools import tool_fetch_webpage, tool_get_weather, tool_web_search
 
 # ──────────────────────────────────────────────
 # STATE
 # ──────────────────────────────────────────────
 conversation_histories: dict[int, list] = defaultdict(list)
-user_last_message:      dict[int, float] = defaultdict(float)
+user_last_message: dict[int, float] = defaultdict(float)
+TOOL_EXECUTOR = concurrent.futures.ThreadPoolExecutor(max_workers=6)
 
 # ──────────────────────────────────────────────
 # DISCORD + ANTHROPIC CLIENTS
 # ──────────────────────────────────────────────
 intents = discord.Intents.default()
 intents.message_content = True
-intents.members         = True
-intents.guilds          = True
-intents.voice_states    = True
+intents.members = True
+intents.guilds = True
+intents.voice_states = True
 
 client = discord.Client(intents=intents)
-ai     = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+ai = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
-# ──────────────────────────────────────────────
-# SYSTEM PROMPT
-# ──────────────────────────────────────────────
-SYSTEM_PROMPT = """You are Vibe, the Discord classroom tutor and teacher assistant for an OpenTutor learning community.
 
-OpenTutor school model and daily operations:
-- Learning is organized in GitHub repositories, where curriculum, schedules, assignments, and student outputs are stored.
-- Discord is the virtual classroom where daily check-ins, subject-channel work, announcements, and support happen.
-- Students ask for help in the same channels where they complete assignments.
-- Teachers and parents guide the process and use Vibe to draft classroom-ready materials.
-- The full school model reference is available at [OpenTutor Site](https://discord-vibe-bot.vercel.app/site/).
+async def dispatch_tool(name: str, inputs: dict) -> str:
+    loop = asyncio.get_running_loop()
+    try:
+        if name == "web_search":
+            return await loop.run_in_executor(TOOL_EXECUTOR, tool_web_search, inputs["query"])
+        if name == "fetch_webpage":
+            return await loop.run_in_executor(TOOL_EXECUTOR, tool_fetch_webpage, inputs["url"])
+        if name == "get_weather":
+            return await loop.run_in_executor(TOOL_EXECUTOR, tool_get_weather, inputs["location"])
+        if name == "get_classroom_schedule":
+            return await loop.run_in_executor(TOOL_EXECUTOR, lambda: tool_get_classroom_schedule(**inputs))
+        if name == "github":
+            return await loop.run_in_executor(TOOL_EXECUTOR, lambda: tool_github(**inputs))
+        return f"Unknown tool: {name}"
+    except Exception as exc:
+        return f"Tool error ({name}): {exc}"
 
-You are running inside a Discord server. Users interact with you by @mentioning you.
-You are not a server administrator and must not offer, suggest, or perform moderation/server-management actions.
-
-Your job has two modes:
-
-1. Student tutor
-- Adapt your language to the student's age and grade — ask if unsure.
-- Prefer coaching over dumping answers. Help students think, work step by step, and build understanding.
-- Break hard tasks into small chunks, use simple examples, and check understanding when useful.
-- If a student seems stuck, start with the next step, not a long lecture.
-- Encourage effort, but stay practical and concise.
-- Keep a reusable student resource mindset: offer subject-specific cheat sheets (formulas, grammar rules, writing frameworks), step-by-step skill guides (reading primary sources, citing sources, solving word problems), and vocabulary lists by subject/grade when useful.
-
-2. Teacher assistant
-- Help teachers with lesson framing, announcements, assignment directions, study guides, quiz questions, rubrics, summaries, and rewording.
-- Prioritize practical teacher assets: rubric templates for common assignment types, lesson plan outlines, ready-to-post Discord announcements and assignment prompts, and assessment question banks by subject.
-- Optimize for classroom usefulness: clear structure, easy copy-paste, minimal fluff.
-- If a teacher asks for student-facing material, make it age-appropriate and easy to post in Discord.
-
-Tone and style:
-- Friendly, calm, lightly cool, and confident.
-- Keep responses concise. A few sentences or a short list is usually enough unless depth is needed.
-- Do not be overly slangy, corny, or performative.
-- Use emojis sparingly.
-- When you mention a website, tool, or resource by name, always include a clickable Markdown hyperlink like [Example](https://example.com).
-
-You will receive context that includes who is speaking, their roles, their likely mode, and the channel name. Use that context to decide whether to act like a tutor or a teacher aide."""
-
-# ──────────────────────────────────────────────
-# TOOLS
-# ──────────────────────────────────────────────
-TOOLS = []
-
-# ──────────────────────────────────────────────
-# HELPERS
-# ──────────────────────────────────────────────
 
 def preprocess_mentions(content: str, guild: discord.Guild) -> str:
-    """Replace <@user_id> with @DisplayName (id: user_id) so Claude knows who is referenced."""
+    """Replace <@user_id> with @DisplayName so Claude sees names instead of IDs."""
     def replace(match):
         user_id = int(match.group(1))
-        member  = guild.get_member(user_id)
+        member = guild.get_member(user_id)
         return f"@{member.display_name} (id: {user_id})" if member else match.group(0)
-    return re.sub(r'<@!?(\d+)>', replace, content)
 
-def infer_user_mode(member_roles: list[str]) -> str:
-    lowered_roles = [role.lower() for role in member_roles]
-
-    if any(keyword in role for role in lowered_roles for keyword in ("teacher", "parent", "staff", "mod", "moderator")):
-        return "teacher/staff"
-
-    if any(keyword in role for role in lowered_roles for keyword in ("student", "learner", "kid")):
-        return "student"
-
-    return "unknown"
+    return re.sub(r"<@!?(\d+)>", replace, content)
 
 
 async def send_long(channel: discord.abc.Messageable, reply_to: discord.Message, text: str) -> None:
@@ -109,9 +79,23 @@ async def send_long(channel: discord.abc.Messageable, reply_to: discord.Message,
     await reply_to.reply(text)
 
 
-# ──────────────────────────────────────────────
-# DISCORD EVENTS
-# ──────────────────────────────────────────────
+def help_text() -> str:
+    return (
+        "Hey! Here's what I can do:\n"
+        "📚 Tutor students with step-by-step help in middle school subjects\n"
+        "🧑‍🏫 Help teachers with rubric templates, lesson outlines, announcements, prompts, and assessment banks\n"
+        f"🏠 Understand the `{CLASSROOM_NAME}` family/classroom profile for Caleb, Elijah, Glory, Josh, Lonisa, and Vibe\n"
+        "✅ Help with family productivity, planning, routines, ideas, and quick research\n"
+        "🗓️ Read student schedule CSVs — ask what Caleb, creativegt, Elijah, or Glory should do today/Monday/etc.\n"
+        "🔎 Search the web for up-to-date info — just ask or paste a URL\n"
+        "🌦️ Get live weather — ask for a city or forecast\n"
+        f"🐙 Read GitHub repos — defaults to `{LEARNING_CENTER_FULL_NAME}`\n"
+        "🏫 Stay aligned with the OpenTutor school model and daily workflow\n"
+        "💬 @mention me with any question to chat\n"
+        "`!reset` — clear our conversation history\n"
+        "`!help` — show this message"
+    )
+
 
 @client.event
 async def on_ready():
@@ -120,32 +104,19 @@ async def on_ready():
 
 @client.event
 async def on_message(message: discord.Message):
-    # Ignore own messages
     if message.author == client.user:
         return
 
-    # Only respond when @mentioned
     if not client.user.mentioned_in(message):
         return
 
-    # Strip the @mention from the message
     clean_content = re.sub(rf"<@!?{client.user.id}>", "", message.content).strip()
     if not clean_content:
         clean_content = "Hey Vibe, what's up?"
 
-    # ── Built-in commands ──
     lower = clean_content.lower()
-
     if lower == "!help":
-        await message.reply(
-            "Hey! Here's what I can do:\n"
-            "📚 Tutor students with step-by-step help in middle school subjects\n"
-            "🧑‍🏫 Help teachers with rubric templates, lesson outlines, announcements, prompts, and assessment banks\n"
-            "🏫 Stay aligned with the OpenTutor school model and daily workflow\n"
-            "💬 @mention me with any question to chat\n"
-            "`!reset` — clear our conversation history\n"
-            "`!help` — show this message"
-        )
+        await message.reply(help_text())
         return
 
     if lower == "!reset":
@@ -153,77 +124,85 @@ async def on_message(message: discord.Message):
         await message.reply("Fresh start! Conversation history cleared. 🐱")
         return
 
-    # ── Rate limiting ──
     now = time.time()
     if now - user_last_message[message.author.id] < COOLDOWN_SECONDS:
         await message.reply(f"Slow down a bit — one message every {COOLDOWN_SECONDS}s, please.")
         return
     user_last_message[message.author.id] = now
 
-    # ── Preprocess mentions so Claude sees names, not IDs ──
     if message.guild:
         clean_content = preprocess_mentions(clean_content, message.guild)
 
-    # ── Inject user context ──
     roles = getattr(message.author, "roles", [])
-    member_roles = [r.name for r in roles if r.name != "@everyone"]
-    likely_mode = infer_user_mode(member_roles)
+    member_roles = [role.name for role in roles if role.name != "@everyone"]
+    known_member = describe_known_classroom_member(message.author.display_name)
+    likely_mode = infer_user_mode(member_roles, known_member)
     channel_name = getattr(message.channel, "name", "direct-message")
     user_context = (
         f"[Speaking with: {message.author.display_name} "
         f"(id: {message.author.id}), "
         f"Roles: {', '.join(member_roles) or 'none'}, "
+        f"Known JFD member: {known_member}, "
         f"Likely mode: {likely_mode}, "
         f"Channel: #{channel_name}]\n\n"
     )
     full_content = user_context + clean_content
 
-    # ── Build history ──
     history = conversation_histories[message.channel.id]
     history.append({"role": "user", "content": full_content})
-    if len(history) > MAX_HISTORY * 2:          # *2 because user+assistant pairs
+    if len(history) > MAX_HISTORY * 2:
         history = history[-(MAX_HISTORY * 2):]
         conversation_histories[message.channel.id] = history
+
+    system_prompt = build_system_prompt(full_content)
 
     async with message.channel.typing():
         try:
             messages = list(history)
+            tool_rounds = 0
 
             while True:
                 response = ai.messages.create(
                     model="claude-sonnet-4-6",
-                    max_tokens=1024,
-                    system=SYSTEM_PROMPT,
+                    max_tokens=2048,
+                    system=system_prompt,
                     tools=TOOLS,
-                    messages=messages
+                    messages=messages,
                 )
 
                 if response.stop_reason == "tool_use":
-                    # Tools are disabled for this tutor profile, so continue as plain chat.
-                    text = "I can only help with student tutoring and teacher-assistant support."
-                    conversation_histories[message.channel.id].append(
-                        {"role": "assistant", "content": text}
-                    )
-                    await send_long(message.channel, message, text)
-                    break
-
-                else:
-                    text = next((b.text for b in response.content if hasattr(b, "text")), None)
-                    if text:
-                        # Save assistant reply to history
-                        conversation_histories[message.channel.id].append(
-                            {"role": "assistant", "content": text}
-                        )
+                    tool_blocks = [block for block in response.content if block.type == "tool_use"]
+                    tool_rounds += 1
+                    if tool_rounds > MAX_TOOL_ROUNDS:
+                        text = "I hit my tool-use limit for this question. Try narrowing the request or asking for one repo/file/site at a time."
+                        conversation_histories[message.channel.id].append({"role": "assistant", "content": text})
                         await send_long(message.channel, message, text)
-                    break
+                        break
 
-        except Exception as e:
-            await message.reply(f"Meow... hit a little snag: {e}")
+                    messages.append({"role": "assistant", "content": response.content})
+                    results = await asyncio.gather(
+                        *(dispatch_tool(block.name, block.input) for block in tool_blocks)
+                    )
+                    tool_results = [
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": block.id,
+                            "content": result,
+                        }
+                        for block, result in zip(tool_blocks, results)
+                    ]
+                    messages.append({"role": "user", "content": tool_results})
+                    continue
 
+                text = next((block.text for block in response.content if hasattr(block, "text")), None)
+                if text:
+                    conversation_histories[message.channel.id].append({"role": "assistant", "content": text})
+                    await send_long(message.channel, message, text)
+                break
 
-# ──────────────────────────────────────────────
-# ENTRY POINT
-# ──────────────────────────────────────────────
+        except Exception as exc:
+            await message.reply(f"Meow... hit a little snag: {exc}")
+
 
 if __name__ == "__main__":
     discord_token = os.getenv("DISCORD_TOKEN")

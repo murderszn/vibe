@@ -189,6 +189,11 @@ Useful links:
 ## Features in This Repository
 
 - Claude-backed Discord tutor for homeschool support
+- JFD classroom profile for Caleb, Elijah, Glory, Josh, Lonisa, and Vibe
+- family productivity helper for planning, routines, projects, research, and quick organization
+- one-call schedule lookup for Caleb, Elijah, Glory, and Caleb's `creativegt` alias
+- live web search, URL reading, and weather lookups through Claude tools
+- GitHub repo reading/search for the default learning center repo
 - per-channel conversation memory
 - `@mention` and DM interaction model
 - admin-gated server management actions
@@ -198,14 +203,42 @@ Useful links:
 ## Commands
 
 - `@Vibe [question]` — ask Vibe for help in a server channel
+- `@Vibe what's the weather in Chicago?` — live weather lookup
+- `@Vibe what should Elijah and creativegt do on Monday?` — read the student schedule CSVs
+- `@Vibe summarize https://example.com/page` — fetch and read a live webpage
+- `@Vibe what files are in the learning center repo?` — read/search `Johnson-Family-Dynasty/learning-center`
 - `!help` — show available help text
 - `!reset` — clear recent conversation history for the current channel
+
+## Classroom Profile
+
+Vibe has a default JFD classroom profile in `config.py`:
+
+- Students: Caleb, Elijah, and Glory, with birthday-based ages and student workspace paths.
+- Primary teachers: Josh / Dad for structured academics, hard skills, math, STEM, social studies, and GitHub workflows; Lonisa / Mom for experiential learning, projects, outings, creativity, and life skills.
+- Family role: Vibe is also a friendly family productivity helper for planning, routines, project ideas, quick research, and organization.
+
+Update `CLASSROOM_STUDENTS`, `CLASSROOM_TEACHERS`, or the classroom label env vars in `config.py` if the group changes.
+
+## Project Structure
+
+The bot is split so prompt behavior and tool code can evolve separately:
+
+- `bot.py` — Discord events, Claude message loop, rate limiting, and tool dispatch.
+- `config.py` — environment config, classroom roster, aliases, and dynamic classroom profile.
+- `prompting.py` — allowlisted Markdown skill loader and system prompt builder.
+- `skills/SKILLS.md` — index of trusted local skills.
+- `skills/*.md` — discrete behavior skills for classroom identity, tutoring, teacher help, schedules, GitHub, live web, and family productivity.
+- `tools/schemas.py` — Anthropic tool schema definitions.
+- `tools/*_tools.py` — Python implementations for web, weather, GitHub, and schedule lookups.
+
+Only skills listed in `prompting.py` can be loaded into the prompt.
 
 ## Setup
 
 ### Prerequisites
 
-1. Python `3.8+`
+1. Python `3.9+`
 2. A Discord application bot from the [Discord Developer Portal](https://discord.com/developers/applications)
 3. Discord intents enabled for message content and server members
 4. An Anthropic API key from [console.anthropic.com](https://console.anthropic.com/)
@@ -223,7 +256,18 @@ Create a `.env` file in the project root:
 ```env
 DISCORD_TOKEN=your_discord_bot_token_here
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
+GITHUB_TOKEN=your_github_token_with_repo_read_access
+
+# Optional: override the default classroom repo
+LEARNING_CENTER_GITHUB_OWNER=Johnson-Family-Dynasty
+LEARNING_CENTER_GITHUB_REPO=learning-center
+
+# Optional: override classroom labels used in the prompt
+CLASSROOM_NAME=JFD Learning Center
+CLASSROOM_GROUP_NAME=Johnson Family Dynasty
 ```
+
+`GITHUB_TOKEN` is optional for public repositories, but recommended. It is required if `Johnson-Family-Dynasty/learning-center` is private and also improves GitHub API limits and code search access. For a fine-grained token, grant read access to the selected `learning-center` repository.
 
 Run the bot:
 
