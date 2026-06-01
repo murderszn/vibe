@@ -178,7 +178,7 @@
       font-weight: 700;
       font-size: 1.22rem;
       color: var(--text);
-      letter-spacing: -0.02em;
+      letter-spacing: 0;
     }
 
     .logo-subtext {
@@ -419,7 +419,7 @@
       font-family: var(--heading-font);
       font-size: clamp(2.5rem, 4vw, 3.5rem);
       font-weight: 600;
-      letter-spacing: -0.04em;
+      letter-spacing: 0;
       line-height: 1.15;
       color: var(--text);
       margin-bottom: 24px;
@@ -459,13 +459,13 @@
       align-items: center;
       gap: 6px;
       margin: -18px 0 28px;
-      opacity: 0.34;
+      opacity: 0.52;
       transition: opacity 0.18s ease;
     }
 
     .share-actions:hover,
     .share-actions:focus-within {
-      opacity: 0.88;
+      opacity: 1;
     }
 
     .share-btn {
@@ -559,7 +559,7 @@
       color: var(--text);
       font-size: 1.08rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
     }
 
     .release-card p,
@@ -650,7 +650,7 @@
       color: var(--text);
       font-size: 1.1rem;
       font-weight: 750;
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
     }
 
     .runtime-summary-card p,
@@ -783,7 +783,7 @@
       color: var(--text);
       font-size: 1.45rem;
       font-weight: 750;
-      letter-spacing: -0.02em;
+      letter-spacing: 0;
     }
 
     .runtime-subheader p {
@@ -868,7 +868,7 @@
       font-family: var(--heading-font);
       font-size: 2.25rem;
       font-weight: 600;
-      letter-spacing: -0.03em;
+      letter-spacing: 0;
       margin-bottom: 16px;
       color: var(--text);
     }
@@ -981,7 +981,7 @@
       font-size: 1rem;
       font-weight: 600;
       color: var(--text);
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
     }
 
     .audience-card p {
@@ -2139,7 +2139,7 @@
       color: var(--text);
       font-size: 1.02rem;
       font-weight: 600;
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
     }
 
     .github-support-card p {
@@ -2455,9 +2455,9 @@
     }
 
     .section-header {
-      max-width: 760px;
-      margin: 0 auto 48px;
-      text-align: center;
+      max-width: 100%;
+      margin: 0 0 48px;
+      text-align: left;
     }
 
     .section-banner {
@@ -2471,7 +2471,7 @@
       height: clamp(230px, 30vw, 360px);
       object-fit: cover;
       object-position: center;
-      border-radius: 12px;
+      border-radius: 8px;
       border: 1px solid rgba(203,213,225,0.72);
       box-shadow: 0 18px 42px -30px rgba(15,23,42,0.38);
       background: #eef2f7;
@@ -2497,11 +2497,12 @@
     .section-subtitle,
     .section-note {
       max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 0;
+      margin-right: 0;
       color: var(--muted);
       font-size: 1.02rem;
       line-height: 1.72;
+      text-align: left;
     }
 
     .section-subtitle-detail {
@@ -2510,26 +2511,28 @@
 
     .hero-title,
     .hero-subtitle,
-    .hero-meta {
+    .hero-meta,
+    .share-actions {
       margin-left: auto;
       margin-right: auto;
-      text-align: center;
+      text-align: left;
     }
 
     .hero-title {
-      max-width: 1000px;
+      max-width: 920px;
       font-size: clamp(2.55rem, 4.8vw, 4.6rem);
       line-height: 1.05;
     }
 
     .hero-subtitle,
-    .hero-meta {
-      max-width: 820px;
+    .hero-meta,
+    .share-actions {
+      max-width: 920px;
     }
 
     .hero-meta,
     .share-actions {
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .hero-image-wrapper,
@@ -2553,7 +2556,7 @@
     .system-map-panel img,
     .diagram-image,
     .knowledge-net-image {
-      border-radius: 12px;
+      border-radius: 8px;
       border: 1px solid rgba(203,213,225,0.72);
       box-shadow: 0 18px 42px -30px rgba(15,23,42,0.38);
       background: #eef2f7;
@@ -2653,7 +2656,7 @@
     .feature-content h4,
     .github-support-card h3,
     .wallet-label {
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
     }
 
     .repo-flow-code,
@@ -2684,7 +2687,7 @@
     }
 
     .image-panel img {
-      border-radius: 12px;
+      border-radius: 8px;
       border: 1px solid rgba(203,213,225,0.72);
       box-shadow: 0 18px 42px -30px rgba(15,23,42,0.38);
     }
