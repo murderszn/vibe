@@ -6,16 +6,16 @@ import requests
 from config import (
     GITHUB_HEADERS,
     HTTP_TIMEOUT,
-    LEARNING_CENTER_OWNER,
-    LEARNING_CENTER_REPO,
     MAX_GITHUB_RESULTS,
     MAX_GITHUB_TREE,
+    OPENCRUSH_GITHUB_OWNER,
+    OPENCRUSH_GITHUB_REPO,
 )
 from tools.common import truncate
 
 
 def github_target(owner=None, repo=None) -> tuple[str, str]:
-    return (owner or LEARNING_CENTER_OWNER), (repo or LEARNING_CENTER_REPO)
+    return (owner or OPENCRUSH_GITHUB_OWNER), (repo or OPENCRUSH_GITHUB_REPO)
 
 
 def _github_error(resp: requests.Response) -> str:
