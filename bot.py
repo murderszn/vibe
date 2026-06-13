@@ -10,6 +10,7 @@ import os
 import random
 import re
 import time
+import json
 from collections import defaultdict
 from datetime import timedelta
 from pathlib import Path
@@ -30,6 +31,7 @@ from config import (
     LOG_CHANNEL_NAME,
     MAX_HISTORY,
     MAX_RESPONSE_LEN,
+    MAX_SUMMARY_LENGTH,
     MAX_TOOL_ROUNDS,
     SERVER_NAME,
     WELCOME_CHANNEL_NAME,
@@ -302,9 +304,6 @@ async def handle_ai_chat(message: discord.Message) -> None:
 
     history = conversation_histories[message.channel.id]
     history.append({"role": "user", "content": full_content})
-    if len(history) > MAX_HISTORY * 2:
-        history = history[-(MAX_HISTORY * 2):]
-        conversation_histories[message.channel.id] = history
 
     system = build_system_prompt()
 
